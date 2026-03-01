@@ -1,0 +1,28 @@
+{
+  "name": "WebFudge",
+  "short_name": "WebFudge",
+  "description": "We Build Digital Experiences That Convert. Premium full-stack agency crafting high-performance websites, web apps, and digital strategies.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo_packages/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo_packages/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo_packages/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}
