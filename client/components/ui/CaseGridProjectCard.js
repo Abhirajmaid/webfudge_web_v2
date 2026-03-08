@@ -33,7 +33,7 @@ export default function CaseGridProjectCard({ project, size = "pair" }) {
   return (
     <div className="group block">
       <div className={`overflow-hidden bg-neutral-900 border border-white/[0.07]`}>
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className={`relative ${isFull ? "aspect-[16/9]" : "aspect-[4/3]"} overflow-hidden`}>
           <Image
             src={project.image}
             alt={project.title}

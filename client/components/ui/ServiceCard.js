@@ -21,7 +21,7 @@ export default function ServiceCard({
     target: `#${cardId}`,
     stroke: "regular",
     colors: "secondary:#D71EB9",
-    style: { width: 32, height: 32 },
+    style: { width: 48, height: 48 },
   };
   if (iconState) lordIconProps.state = iconState;
 
@@ -39,7 +39,7 @@ export default function ServiceCard({
       {/* Top row */}
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-4">
-          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-neutral-200 overflow-hidden shrink-0">
+          <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center border border-neutral-200 overflow-hidden shrink-0">
             {icon ? (
               React.createElement("lord-icon", lordIconProps)
             ) : (

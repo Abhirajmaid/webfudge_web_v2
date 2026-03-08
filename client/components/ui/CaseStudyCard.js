@@ -19,10 +19,10 @@ export default function CaseStudyCard({ data, size = "large" }) {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="block">
-          {/* Image + hover overlay with rotating curved text */}
-          <div className="relative w-full overflow-hidden bg-neutral-900 border border-neutral-200">
+          {/* Image + hover overlay with rotating curved text — sharp corners, no rounding */}
+          <div className="relative w-full overflow-hidden rounded-none bg-neutral-900 border border-neutral-200">
             <div
-              className={`relative w-full overflow-hidden ${isLarge ? "aspect-[3/2]" : "aspect-[4/3]"}`}
+              className={`relative w-full overflow-hidden rounded-none ${isLarge ? "aspect-[3/2]" : "aspect-[4/3]"}`}
             >
               <Image
                 src={data.image}

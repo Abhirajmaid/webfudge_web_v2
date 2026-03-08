@@ -17,7 +17,7 @@ export default function CTA() {
             transition={{ duration: 0.5 }}
             className="text-4xl lg:text-5xl font-semibold text-white"
           >
-            Ready to build something <span className="font-serif"> Extraordinary </span>
+            Ready to build something <span className="font-serif italic"> Extraordinary </span>
           </motion.h2>
 
           <motion.div

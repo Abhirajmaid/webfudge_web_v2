@@ -3,7 +3,7 @@ export const clients = [
         id: 9,
         title: "Xtrawrkx Website",
         fav: true,
-        img_url: "/images/clients/xtrawrkx/mockup2.webp",
+        img_url: "/images/clients/xtrawrkx/xtrawrkx.png",
         project_imgs: [
             "/images/clients/xtrawrkx/xtrawrkx_ss.png",
         ],
@@ -13,6 +13,7 @@ export const clients = [
             "UI/UX Design",
             "CMS Development",
             "SEO Optimization",
+            "Cloud Deployment",
         ],
         key_highlights: [
             "Designed a responsive website for Xtrawrkx that led to a 40% increase in event registrations",
@@ -30,7 +31,7 @@ export const clients = [
     {
         id: 8,
         title: "Xtrawrkx Manufacturing Businesses",
-        img_url: "/images/clients/xmb/mockup (1).webp",
+        img_url: "/images/clients/xmb/xmb_mockup.png",
         project_imgs: [
             "/images/clients/xmb/xmb_ss.png",
         ],
@@ -38,7 +39,9 @@ export const clients = [
         services_offered: [
             "Website Development",
             "UI/UX Design",
+            "CMS Development",
             "SEO Optimization",
+            "Cloud Deployment",
         ],
         key_highlights: [
             "Designed a responsive website for Xtrawrkx Manufacturing Businesses",
@@ -77,6 +80,7 @@ export const clients = [
         services_offered: [
             "Graphic Design",
             "Event Collateral Design",
+            "Event Branding",
         ],
         key_highlights: [
             "XSOS Event",
@@ -91,14 +95,14 @@ export const clients = [
         id: 2,
         title: "Plantozone Green India Website",
         fav: true,
-        img_url: "/images/clients/planto/mockup.webp",
+        img_url: "/images/clients/planto/plantozone_mockup.png",
         link: "https://www.plantozone.com/",
         project_imgs: [
             "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b84463214084681.675187ff0014e.png"],
         short_des: "Built a seamless and nature-inspired website experience to grow Plantozone’s digital presence.",
         services_offered: [
             "Website Development",
-            "E-commerce Development",
+            "Ecommerce Development",
             "UI/UX Design",
             "CMS Development",
             "SEO Optimization",
@@ -111,14 +115,14 @@ export const clients = [
         id: 5,
         title: "Mukund Maid Jewellers Website",
         fav: true,
-        img_url: "/images/clients/mmj/7.png",
+        img_url: "/images/clients/mmj/mmj_kockup.png",
         project_imgs: [
             "/images/clients/mmj/7.png",
         ],
         short_des: "Complete Ecommerce Website Design and Development for Mukund Maid Jewellers",
         services_offered: [
             "Website Development",
-            "E-commerce Development",
+            "Ecommerce Development",
             "UI/UX Design",
             "CMS Development",
             "SEO Optimization",
@@ -154,6 +158,7 @@ export const clients = [
             "Logo Design",
             "Color Palette Development",
             "Brand Guidelines",
+            "Complete Brand Identity",
         ],
         key_highlights: [
             "Created a timeless luxury logo mark",
@@ -211,6 +216,7 @@ export const clients = [
         ],
         short_des: "Comprehensive branding and logo design for XSOS, including visual identity, color palette, and usage guidelines.",
         services_offered: [
+            "Branding",
             "Logo Design",
             "Color Palette Development",
             "Usage Manual Creation"
@@ -228,7 +234,7 @@ export const clients = [
         id: 13,
         title: "Greenways EVI Creatives",
         fav: true,
-        img_url: "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037904/Greenways/poster_1_qnjiky.jpg",
+        img_url: "/images/clients/evi/evi2.jpg",
         project_imgs: [
             "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
             "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
@@ -253,6 +259,28 @@ export const clients = [
         ],
         introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
         solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
+    },
+    {
+        id: 13,
+        title: "EVI (Greenways Mobility) Branding & Logo",
+        fav: true,
+        img_url: "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037904/Greenways/poster_1_qnjiky.jpg",
+        project_imgs: [],
+        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
+        services_offered: [
+            "Branding",
+            "Logo Design",
+            "Color Palette Development",
+            "Usage Manual Creation"
+        ],
+        key_highlights: [
+            "Increased brand recall by 60% through a memorable new visual identity rollout",
+            "6+ brand assets: logo mark, business cards, app icons, banners, event IDs, and more designed",
+            "100,000+ Monthly visibility online and offline",
+            "Enabled 100% consistency across 5+ event touchpoints and all digital channels",
+        ],
+        introduction: "The EVI branding project entailed creating a distinctive, memorable logo and a unified visual identity to build recognition and trust. The brand needed assets to be deployed consistently across digital touchpoints and events.",
+        solution_offered: "We delivered a unique logo symbolizing EVI's core values, supported by an extensive visual identity system. The project included development of usage guidelines, color palette, stationery design, digital assets, and scalable branding materials to ensure cohesive representation across web, mobile, merchandise, and event collateral."
     },
     {
         id: 12,
