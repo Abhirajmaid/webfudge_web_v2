@@ -12,6 +12,7 @@ export default function ServiceCard({
   icon,
   iconState,
   href,
+  questionnairePath,
   className = "",
 }) {
   const cardId = `service-card-${slugifyId(title)}`;
@@ -34,7 +35,7 @@ export default function ServiceCard({
     </span>
   );
 
-  const content = (
+  const mainBlock = (
     <>
       {/* Top row */}
       <div className="flex items-start justify-between">
@@ -68,19 +69,29 @@ export default function ServiceCard({
     </>
   );
 
-  const cardClasses = `relative rounded-md bg-neutral-100 p-4 transition duration-300 hover:shadow-md hover:-translate-y-1 group block ${className}`;
+  const cardClasses = `relative rounded-md bg-neutral-100 p-4 transition duration-300 hover:shadow-md hover:-translate-y-1 group ${className}`;
 
   if (href) {
     return (
-      <Link id={cardId} href={href} className={cardClasses} aria-label={`Open ${title}`}>
-        {content}
-      </Link>
+      <div id={cardId} className={cardClasses}>
+        <Link href={href} className="block text-inherit no-underline" aria-label={`Open ${title}`}>
+          {mainBlock}
+        </Link>
+        {questionnairePath ? (
+          <Link
+            href={questionnairePath}
+            className="relative z-10 mt-3 inline-flex items-center rounded-full border border-neutral-900 bg-white px-3.5 py-2 text-xs font-medium text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
+          >
+            Discovery questionnaire
+          </Link>
+        ) : null}
+      </div>
     );
   }
 
   return (
     <div id={cardId} className={cardClasses}>
-      {content}
+      {mainBlock}
     </div>
   );
 }

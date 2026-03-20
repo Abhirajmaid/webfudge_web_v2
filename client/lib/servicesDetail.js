@@ -2,7 +2,7 @@
  * Rich detail for the 6 services in SERVICES_MENU.
  * Slugs must match slugify(SERVICES_MENU[].title):
  * graphic-creative-design, brand-identity-design, uiux-design,
- * website-landing-page-development, pitch-deck-corporate-decks, e-commerce-development.
+ * website-landing-page-development (website questionnaire), pitch-deck-corporate-decks, e-commerce-development.
  */
 export const SERVICES_DETAIL = {
   "graphic-creative-design": {
@@ -119,6 +119,8 @@ export const SERVICES_DETAIL = {
       { id: 6, question: "How do you ensure the brand identity reflects our company values?", answer: "We start every project with extensive discovery sessions to understand your company's values, mission, culture, and target audience. This deep understanding informs every design decision, ensuring your brand identity authentically represents who you are." },
     ],
     relatedServices: ["logo-design", "branding", "brand-identity"],
+    /** Deep link for the discovery form (see BrandingQuestionnaire). */
+    questionnairePath: "/services/branding/questionnaire",
   },
 
   "uiux-design": {
@@ -219,6 +221,7 @@ export const SERVICES_DETAIL = {
       { id: 6, question: "Can you help improve conversion rates on existing pages?", answer: "Yes! We can audit your existing pages and redesign them with conversion optimization in mind. We'll identify barriers to conversion and create designs that guide visitors more effectively toward your goals." },
     ],
     relatedServices: ["website-development"],
+    questionnairePath: "/services/website/questionnaire",
   },
 
   "pitch-deck-corporate-decks": {

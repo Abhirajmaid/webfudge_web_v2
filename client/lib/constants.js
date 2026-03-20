@@ -44,6 +44,7 @@ export const SERVICES_MENU = [
       "Brand Guidelines",
       "Naming & Positioning",
     ],
+    questionnairePath: "/services/branding/questionnaire",
   },
   {
     title: "UI/UX Design",
@@ -76,6 +77,7 @@ export const SERVICES_MENU = [
       "Accessibility",
       "Performance Tuning",
     ],
+    questionnairePath: "/services/website/questionnaire",
   },
   {
     title: "Pitch Deck & Corporate Decks",

@@ -69,3 +69,37 @@
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
 }
+
+@media print {
+  @page {
+    margin: 14mm 16mm;
+  }
+
+  /* Questionnaire answer summaries (branding, website, etc.) — not full page chrome. */
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .questionnaire-print-only,
+  .questionnaire-print-only * {
+    visibility: visible;
+  }
+
+  .questionnaire-print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: block !important;
+  }
+}

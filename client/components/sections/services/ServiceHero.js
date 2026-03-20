@@ -13,20 +13,25 @@ export default function ServiceHero({ service }) {
   return (
     <Section className="!py-10">
       <Container size="wide">
-        <div div className="max-w-5xl space-y-8" >
+        <div className="max-w-5xl space-y-8">
           <h1 className="text-5xl lg:text-8xl font-regular leading-[1.05] tracking-tight">
             {headline}
           </h1>
           <p className="text-2xl max-w-2xl">
             {subtext}
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Button href="/contact" variant="primary" size="lg">
               Book a Call
             </Button>
+            {service?.questionnairePath ? (
+              <Button href={service.questionnairePath} variant="light" size="lg">
+                Questionnaire
+              </Button>
+            ) : null}
           </div>
-        </div >
-      </Container >
-    </Section >
+        </div>
+      </Container>
+    </Section>
   );
 }
