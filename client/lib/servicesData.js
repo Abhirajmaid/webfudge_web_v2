@@ -103,6 +103,7 @@ const SERVICES_BY_SLUG = (() => {
       reasons: detail.reasons ?? null,
       faqs: detail.faqs ?? null,
       relatedServices: detail.relatedServices ?? null,
+      questionnairePath: detail.questionnairePath ?? null,
     };
   });
   return map;

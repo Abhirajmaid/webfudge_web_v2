@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ["puppeteer"],
+  },
   images: {
     // Allow larger optimized variants for sharper project/case study images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],

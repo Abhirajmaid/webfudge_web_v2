@@ -84,7 +84,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300 border-b border-neutral-200",
+          "sticky top-0 z-50 transition-all duration-300 border-b border-neutral-200 print:hidden",
           scrolled
             ? "backdrop-blur-md bg-white/95 h-[84px]"
             : "bg-white/80 h-[84px]"
@@ -273,6 +273,7 @@ export default function Navbar() {
                         icon={group.icon}
                         iconState={group.iconState}
                         href={`/services/${slugify(group.title)}`}
+                        questionnairePath={group.questionnairePath}
                         className="h-full"
                       />
                     ))}
