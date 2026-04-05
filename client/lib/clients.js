@@ -1,8 +1,79 @@
 export const clients = [
     {
+        id: 20,
+        title: "Wiggle Logo and Branding",
+        fav: true,
+        link: "https://www.behance.net/gallery/246969697/Wiggle-A-Soft-Confident-Brand-Identity-for-Women-brand",
+        img_url: "/images/clients/wiggleandtopee/wiggle.png",
+        project_imgs: [],
+        short_des: "Logo and brand identity for Wiggle, a women's hair brand focused on wigs and extensions — soft, confident, and premium.",
+        services_offered: [
+            "Branding",
+            "Logo Design",
+            "Brand Identity",
+            "Visual Identity",
+            "Creative Direction",
+        ],
+        key_highlights: [
+            "Monogram and wordmark tailored for a women's hair and beauty audience",
+            "Rich, tactile visual direction aligned with premium wigs and extensions",
+            "Cohesive identity ready for packaging, digital, and campaign use",
+        ],
+        introduction: "Wiggle needed a brand that feels elevated and feminine without feeling generic — one that speaks to confidence and quality in women's hair solutions, including wigs and extensions.",
+        solution_offered: "We developed a soft yet confident visual identity: a refined monogram paired with a clear wordmark, a warm color story grounded in real hair texture, and guidance for applying the system across touchpoints so the brand reads premium and trustworthy."
+    },
+    {
+        id: 21,
+        title: "Topee Logo and Branding",
+        fav: true,
+        link: "https://www.behance.net/gallery/246968025/Topee-Minimalist-Branding-for-a-Lifestyle-Brand",
+        img_url: "/images/clients/wiggleandtopee/topee.png",
+        project_imgs: [],
+        short_des: "Minimalist logo and branding for Topee, a male wig and hair solution brand with a bold, editorial tone.",
+        services_offered: [
+            "Branding",
+            "Logo Design",
+            "Brand Identity",
+            "Visual Identity",
+            "Typography",
+            "Creative Direction",
+        ],
+        key_highlights: [
+            "Distinctive wordmark with a memorable hair-inspired detail",
+            "High-contrast, minimal art direction for a lifestyle-led hair brand",
+            "Messaging that reframes choice around hair solutions for men",
+        ],
+        introduction: "Topee is a male wig and hair solution brand that wanted a stripped-back, confident identity — less clinical, more lifestyle — with typography and visuals that feel modern and intentional.",
+        solution_offered: "We created a minimalist brand system around a strong logotype, restrained black-and-white photography direction, and sharp copy cues. The result is a cohesive look that supports premium positioning and clear storytelling for men's hair solutions."
+    },
+    {
+        id: 19,
+        title: "Yashraj Group Website",
+        fav: true,
+        link: "https://www.behance.net/gallery/247016833/Yashraj-Infrastructure-Corporate-Website-UIUX-Design",
+        img_url: "/images/clients/yashraj/1 (2).png",
+        project_imgs: [],
+        short_des: "Website design and development for Yashraj Group, focused on infrastructure-led storytelling and lead generation.",
+        services_offered: [
+            "Website Development",
+            "UI/UX Design",
+            "Responsive Design",
+            "Landing Page Optimization",
+        ],
+        key_highlights: [
+            "Built a modern corporate website aligned with infrastructure and construction branding",
+            "Structured content sections for services, projects, and case studies",
+            "Designed clear calls-to-action to improve inquiry conversion",
+            "Created a responsive layout for smooth experience across devices",
+        ],
+        introduction: "Yashraj Group needed a professional web presence to showcase their infrastructure expertise, service offerings, and project portfolio while building trust with government and private stakeholders.",
+        solution_offered: "We designed and developed a performance-focused website with a clean visual identity, clear navigation, and conversion-friendly content architecture. The experience highlights mission, services, project stories, and trust signals while remaining fast and fully responsive."
+    },
+    {
         id: 9,
         title: "Xtrawrkx Website",
         fav: true,
+        link: "https://www.behance.net/gallery/247017161/Xtrawrkx-Business-Consulting-Website-Experience",
         img_url: "/images/clients/xtrawrkx/xtrawrkx.png",
         project_imgs: [
             "/images/clients/xtrawrkx/xtrawrkx_ss.png",
@@ -31,6 +102,7 @@ export const clients = [
     {
         id: 8,
         title: "Xtrawrkx Manufacturing Businesses",
+        link: "https://www.behance.net/gallery/247017045/Xtrawrkx-Manufacturing-Business-Management-Platform",
         img_url: "/images/clients/xmb/xmb_mockup.png",
         project_imgs: [
             "/images/clients/xmb/xmb_ss.png",
@@ -60,7 +132,7 @@ export const clients = [
         id: 1,
         title: "XSOS 2025",
         fav: true,
-        link: "https://www.linkedin.com/company/xtrawrkx/",
+        link: "https://www.behance.net/gallery/221875125/Creatives-design-for-Consultant-company-event-Xtrawrkx",
         img_url: "https://mir-s3-cdn-cf.behance.net/project_modules/source/c65a3d221875125.67dbf0b74f297.png",
         project_imgs: [
             "https://mir-s3-cdn-cf.behance.net/project_modules/disp/ffc828221875125.67f692735b8e8.png",
@@ -96,7 +168,7 @@ export const clients = [
         title: "Plantozone Green India Website",
         fav: true,
         img_url: "/images/clients/planto/plantozone_mockup.png",
-        link: "https://www.plantozone.com/",
+        link: "https://www.behance.net/gallery/214084681/Plantozone-E-Commerce-Website-UIUX-Case-Study",
         project_imgs: [
             "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b84463214084681.675187ff0014e.png"],
         short_des: "Built a seamless and nature-inspired website experience to grow Plantozone’s digital presence.",
@@ -115,6 +187,7 @@ export const clients = [
         id: 5,
         title: "Mukund Maid Jewellers Website",
         fav: true,
+        link: "https://www.behance.net/gallery/214093351/MMJ-E-commerce-website",
         img_url: "/images/clients/mmj/mmj_kockup.png",
         project_imgs: [
             "/images/clients/mmj/7.png",
@@ -144,6 +217,7 @@ export const clients = [
     {
         id: 51,
         title: "Branding and Logo Design for Mukund Maid Jewellers",
+        link: "https://www.behance.net/gallery/223917427/MMJ-Strategic-Branding-Identity-Design",
         img_url: "/images/clients/mmj/mmj2.webp",
         project_imgs: [
             "/images/clients/mmj/1.png",
@@ -310,6 +384,7 @@ export const clients = [
         id: 14,
         title: "Abshan Logo and Branding",
         fav: true,
+        link: "https://www.behance.net/gallery/214094333/Logo-design-for-Abshan-(A-clothing-brand)",
         img_url: "https://res.cloudinary.com/doguvqxgl/image/upload/v1765045109/abshan/7b7eeaf0-a955-4e9f-ab50-682389857cff.png",
         project_imgs: [
             "https://res.cloudinary.com/doguvqxgl/image/upload/v1765044772/abshan/Brief_Brand_Board_for_abshan_page-0001_bzl37c.jpg",
@@ -365,7 +440,6 @@ export const clients = [
         introduction: "Pratik Agrawal is an accomplished lawyer seeking to establish a strong professional presence. The project focused on creating branding that reflects integrity, expertise, and credibility in the legal profession.",
         solution_offered: "We designed a distinguished visual identity for lawyer Pratik Agrawal, including a unique logo, appropriate color scheme, and brand materials that communicate professionalism and trust, suitable for legal clients and stakeholders."
     },
-
 
 
 ];

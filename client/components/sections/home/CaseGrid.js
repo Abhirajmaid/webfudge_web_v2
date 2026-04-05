@@ -13,6 +13,7 @@ const PROJECTS = clients.slice(0, 6).map((c) => ({
   title: c.title,
   desc: c.short_des,
   image: c.img_url,
+  link: c.link ?? null,
 }));
 
 const ROWS = [

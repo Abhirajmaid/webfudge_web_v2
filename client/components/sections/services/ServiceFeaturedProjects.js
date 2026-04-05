@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import CaseStudyCard from "@/components/ui/CaseStudyCard";
@@ -14,6 +13,7 @@ function toCaseStudyData(project) {
     description: project.desc ?? "",
     tags: project.tags ?? [],
     result: project.result ?? null,
+    link: project.link ?? null,
   };
 }
 
@@ -31,14 +31,8 @@ export default function ServiceFeaturedProjects({ service }) {
     <Section variant="default" className="!py-10">
       <Container size="wide">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full items-start">
-          <Link href="/case-studies" className="block w-full">
-            <CaseStudyCard data={first} size="large" />
-          </Link>
-          {second && (
-            <Link href="/case-studies" className="block w-full">
-              <CaseStudyCard data={second} size="large" />
-            </Link>
-          )}
+          <CaseStudyCard data={first} size="large" />
+          {second && <CaseStudyCard data={second} size="large" />}
         </div>
       </Container>
     </Section>

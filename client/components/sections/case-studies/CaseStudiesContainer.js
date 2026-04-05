@@ -15,6 +15,7 @@ function toCaseStudyEntry(client) {
     description: client.short_des,
     tags: client.services_offered ?? [],
     result: client.key_highlights?.[0] ?? null,
+    link: client.link ?? null,
   };
 }
 

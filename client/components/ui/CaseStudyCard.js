@@ -9,8 +9,21 @@ import { motion } from "framer-motion";
  */
 export default function CaseStudyCard({ data, size = "large" }) {
   const isLarge = size === "large";
+  const href = data.link;
+  const Wrapper = href ? "a" : "div";
+  const wrapperProps = href
+    ? {
+        href,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }
+    : {};
+
   return (
-    <div className="group block w-full">
+    <Wrapper
+      {...wrapperProps}
+      className={`group block w-full${href ? " cursor-pointer" : ""}`}
+    >
       <motion.div
         className="flex flex-col gap-4 lg:gap-5"
         initial={{ opacity: 0, y: 24 }}
@@ -78,6 +91,6 @@ export default function CaseStudyCard({ data, size = "large" }) {
           </div>
         </div>
       </motion.div>
-    </div>
+    </Wrapper>
   );
 }

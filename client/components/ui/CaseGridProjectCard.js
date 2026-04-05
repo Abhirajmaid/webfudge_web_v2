@@ -29,9 +29,21 @@ export default function CaseGridProjectCard({ project, size = "pair" }) {
   // Larger intrinsic dimensions for sharper display (full-width card needs more pixels)
   const width = isFull ? 1700 : 1000;
   const height = isFull ? 1700 : 1000;
+  const href = project.link;
+  const Wrapper = href ? "a" : "div";
+  const wrapperProps = href
+    ? {
+        href,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }
+    : {};
 
   return (
-    <div className="group block">
+    <Wrapper
+      {...wrapperProps}
+      className={`group block${href ? " cursor-pointer" : ""}`}
+    >
       <div className={`overflow-hidden bg-neutral-900 border border-white/[0.07]`}>
         <div className={`relative ${isFull ? "aspect-[16/9]" : "aspect-[4/3]"} overflow-hidden`}>
           <Image
@@ -62,6 +74,6 @@ export default function CaseGridProjectCard({ project, size = "pair" }) {
 
         <ArrowLabel />
       </div>
-    </div>
+    </Wrapper>
   );
 }

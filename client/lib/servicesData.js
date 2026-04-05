@@ -56,6 +56,7 @@ function getRelatedForService(serviceTitle, serviceTags, limit = 6) {
     slug: c.id,
     tags: c.services_offered ?? [],
     result: c.key_highlights?.[0] ?? null,
+    link: c.link ?? null,
   }));
 }
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/layout/SectionHeader";
@@ -15,6 +14,7 @@ function toCaseStudyData(project) {
     description: project.desc ?? "",
     tags: project.tags ?? [],
     result: project.result ?? null,
+    link: project.link ?? null,
   };
 }
 
@@ -54,13 +54,12 @@ export default function ServiceRelatedProjects({ service }) {
             const isLastAndOdd =
               entries.length % 2 === 1 && index === entries.length - 1;
             return (
-              <Link
+              <div
                 key={data.id}
-                href="/case-studies"
                 className={`block w-full ${isLastAndOdd ? "sm:col-span-2" : ""}`}
               >
                 <CaseStudyCard data={data} size="large" />
-              </Link>
+              </div>
             );
           })}
         </div>
