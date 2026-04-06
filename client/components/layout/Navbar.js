@@ -26,7 +26,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 16);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 16);
+      // Close Services mega-menu on any document scroll (wheel, trackpad, touch on page)
+      setOpenMenu((m) => (m === "services" ? null : m));
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -273,7 +277,6 @@ export default function Navbar() {
                         icon={group.icon}
                         iconState={group.iconState}
                         href={`/services/${slugify(group.title)}`}
-                        questionnairePath={group.questionnairePath}
                         className="h-full"
                       />
                     ))}

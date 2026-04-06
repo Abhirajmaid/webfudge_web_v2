@@ -23,7 +23,7 @@ export const metadata = {
     "Next.js",
     "React",
     "SEO",
-    "UI/UX",
+    "performance marketing",
     "full-stack",
     "brand identity",
     "case studies",

@@ -12,7 +12,6 @@ export default function ServiceCard({
   icon,
   iconState,
   href,
-  questionnairePath,
   className = "",
 }) {
   const cardId = `service-card-${slugifyId(title)}`;
@@ -77,14 +76,6 @@ export default function ServiceCard({
         <Link href={href} className="block text-inherit no-underline" aria-label={`Open ${title}`}>
           {mainBlock}
         </Link>
-        {questionnairePath ? (
-          <Link
-            href={questionnairePath}
-            className="relative z-10 mt-3 inline-flex items-center rounded-full border border-neutral-900 bg-white px-3.5 py-2 text-xs font-medium text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
-          >
-            Discovery questionnaire
-          </Link>
-        ) : null}
       </div>
     );
   }

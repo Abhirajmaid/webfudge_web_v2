@@ -15,8 +15,6 @@ export default function ContactPage() {
         titleLine1="Let's start a"
         titleLine2="conversation"
         tagline="We'd love to hear about your project. Fill out the form below and we'll get back to you within one business day."
-        ctaText="Get in Touch"
-        ctaHref="#contact"
       />
       <ContactForm />
       {/* <ContactMapSection /> */}

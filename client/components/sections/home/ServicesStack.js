@@ -22,7 +22,7 @@ const itemVariants = {
 
 export default function ServicesStack() {
   return (
-    <Section variant="default" className="mt-[30vh]">
+    <Section variant="default" className="mt-[4vh]">
       <Container>
         <SectionHeader
           title={

@@ -1,7 +1,7 @@
 /**
  * Rich detail for the 6 services in SERVICES_MENU.
  * Slugs must match slugify(SERVICES_MENU[].title):
- * graphic-creative-design, brand-identity-design, uiux-design,
+ * graphic-creative-design, brand-identity-design, performance-marketing,
  * website-landing-page-development (website questionnaire), pitch-deck-corporate-decks, e-commerce-development.
  */
 export const SERVICES_DETAIL = {
@@ -123,54 +123,54 @@ export const SERVICES_DETAIL = {
     questionnairePath: "/services/branding/questionnaire",
   },
 
-  "uiux-design": {
+  "performance-marketing": {
     hero: {
-      headline: "UI/UX design that gets your B2B product to market faster.",
-      subheadline: "Our unique framework + AI tools deliver results 2x faster",
-      supportingText: "Based on 500+ finished projects & 12 years of experience",
+      headline: "Performance marketing that drives real revenue not just clicks",
+      subheadline: "Paid search, paid social, and full-funnel campaigns built for clarity, attribution, and ROI.",
+      supportingText: "Based on 500+ growth engagements & 12 years of media and conversion experience",
       ctaText: "BOOK A CALL",
       ctaLink: "https://calendly.com/webfudgeagency",
     },
     stats: {
       projects: "500+",
-      users: "3.4M",
-      fundsRaised: "$530M",
-      launchSpeed: "40%",
-      costReduction: "20%",
-      scalingEfficiency: "25%",
+      campaigns: "1K+",
+      avgRoas: "3.2x",
+      cplImprovement: "35%",
+      conversionLift: "28%",
+      clientSatisfaction: "98%",
     },
     challenges: [
-      { id: 1, title: "Low user engagement", description: "Businesses struggle with low user engagement and high drop-off rates when their product feels confusing or frustrating to navigate. Taking care of UI/UX will help you deal with it, offering practical design solutions to make your users satisfied.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
-      { id: 2, title: "Design-driven overspending", description: "Effective design minimizes the risk of overspending on unnecessary features, bringing you closer to product-market fit. Investing in UI/UX design services ensures a user-centered design from the start.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
-      { id: 3, title: "Poor conversion rates", description: "If users find the product unappealing during the trial period, they are less likely to commit to a full purchase. In this case, improving UI/UX design can greatly impact on your conversion rates and make users take the desired actions.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
-      { id: 4, title: "Outdated design solutions", description: "Keeping your product current with modern UI/UX decisions improves user satisfaction. As design trends change, relying on outdated solutions can drag down your project's effectiveness and appeal.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
-      { id: 5, title: "Inefficient onboarding process", description: "No one likes to see a lot of questions and wonder which button to click to finally sign up. With simplified onboarding, you can make users engaged from the start, and that's where UI/UX design check can help.", icon: "https://cdn.lordicon.com/lewtedlh.json" },
-      { id: 6, title: "Low accessibility", description: "If your project has significant barriers for users with disabilities, many potential clients will simply drop off. Accessible UI/UX design creates an inclusive environment where all people can engage with your product.", icon: "https://cdn.lordicon.com/lewtedlh.json" },
+      { id: 1, title: "Rising CAC and unclear ROI", description: "Without tight tracking and structured campaigns, cost per lead creeps up and leadership loses confidence in marketing. Performance marketing aligns spend to outcomes you can prove.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
+      { id: 2, title: "Weak attribution and reporting", description: "If you cannot see which channels and creatives drive pipeline, you cannot scale what works. We implement measurement frameworks so decisions are based on data, not guesses.", icon: "https://cdn.lordicon.com/lhjwpfnn.json" },
+      { id: 3, title: "Traffic that does not convert", description: "High impressions and clicks mean little if landing pages and offers do not match intent. We align messaging, creative, and post-click experience to improve conversion rates.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
+      { id: 4, title: "Creative fatigue and stale messaging", description: "Audiences tune out repetitive ads. Structured testing of hooks, formats, and angles keeps campaigns fresh and sustains performance over time.", icon: "https://cdn.lordicon.com/exymduqj.json" },
+      { id: 5, title: "Under-scaled winning campaigns", description: "Teams often pause winners too early or scale losers too fast. We use guardrails and incrementality thinking so budget moves toward what actually drives revenue.", icon: "https://cdn.lordicon.com/lewtedlh.json" },
+      { id: 6, title: "Siloed channels and inconsistent funnels", description: "When search, social, and site experience tell different stories, prospects drop off. We orchestrate a coherent funnel from first touch to qualified lead or sale.", icon: "https://cdn.lordicon.com/lbcxnxti.json" },
     ],
     process: [
-      { step: 1, title: "Discovery & Strategy Planning", description: "We start by understanding your business goals, target audience, and market positioning. Through workshops and research, we develop a comprehensive strategy that aligns design with your objectives." },
-      { step: 2, title: "Wireframes & Concepts", description: "Creating low-fidelity wireframes and concept designs to establish information architecture and user flows. This phase ensures the foundation is solid before visual design begins." },
-      { step: 3, title: "UI Design & Visual Refinement", description: "Transforming wireframes into high-fidelity designs with attention to visual hierarchy, typography, color systems, and interaction patterns. Every pixel is crafted for optimal user experience." },
-      { step: 4, title: "Development Preparation", description: "Preparing design files with detailed specifications, component libraries, and style guides. We ensure seamless handoff to development teams with organized assets and documentation." },
-      { step: 5, title: "Testing & Validation", description: "Conducting usability testing and gathering feedback to refine designs. We validate solutions with real users to ensure the final product meets both business and user needs." },
+      { step: 1, title: "Goals, ICP & offer mapping", description: "We clarify targets, ideal customer profiles, and what a qualified lead or sale looks like. That defines how we structure campaigns, bids, and creative." },
+      { step: 2, title: "Measurement & tracking setup", description: "We audit tags, conversions, and CRM handoff so you can attribute results to channels and campaigns. Clean data is the foundation of performance work." },
+      { step: 3, title: "Channel strategy & campaign build", description: "We design account and campaign structures for Google, Meta, LinkedIn, or other fits for your market—focused on intent, budget efficiency, and scale." },
+      { step: 4, title: "Creative, copy & landing alignment", description: "We develop and test ads and landing experiences that match search terms and audience segments, reducing waste and improving conversion." },
+      { step: 5, title: "Optimize, scale & report", description: "We run structured experiments, reallocate budget to winners, and deliver clear reporting on cost, volume, and pipeline impact so stakeholders see the story." },
     ],
     reasons: [
-      { id: 1, title: "Team of 120 full-time professionals", description: "With 120 in-house experts, we manage projects efficiently and ensure high-quality results without relying on freelancers.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
-      { id: 2, title: "Data-driven decisions", description: "Every design decision is backed by user research and data, ensuring visually appealing designs that drive results.", icon: "https://cdn.lordicon.com/lbcxnxti.json" },
-      { id: 3, title: "User-centered design for higher engagement", description: "We focus on users' needs, creating intuitive interfaces that boost engagement, retention, and seamless exploration.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
-      { id: 4, title: "Improved developer efficiency", description: "We deliver clear, well-documented designs to streamline development, reduce friction, and save your team time.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
-      { id: 5, title: "Customized solutions for your business goals", description: "We design solutions tailored to your product's needs and goals, focusing on boosting conversions and improving onboarding.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
-      { id: 6, title: "Ongoing optimization and support", description: "We design and continuously optimize, using real-time data and feedback to refine your product and meet evolving user needs.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
+      { id: 1, title: "Full-funnel thinking", description: "We connect awareness, consideration, and conversion so media spend supports revenue—not vanity metrics.", icon: "https://cdn.lordicon.com/lbcxnxti.json" },
+      { id: 2, title: "Platform depth", description: "Hands-on expertise across major ad platforms and formats, tuned to B2B and high-consideration journeys.", icon: "https://cdn.lordicon.com/rpviwvwn.json" },
+      { id: 3, title: "Creative testing discipline", description: "Systematic testing of messaging and creative so you learn what resonates and keep performance from stalling.", icon: "https://cdn.lordicon.com/exymduqj.json" },
+      { id: 4, title: "CRO-aware campaigns", description: "We coordinate ads with landing pages and forms so traffic you pay for has a clear path to convert.", icon: "https://cdn.lordicon.com/ijsqrapz.json" },
+      { id: 5, title: "Transparent reporting", description: "Dashboards and readouts tied to your definitions of success—leads, SQLs, revenue, or ROAS—so finance and leadership stay aligned.", icon: "https://cdn.lordicon.com/lhjwpfnn.json" },
+      { id: 6, title: "Continuous optimization", description: "Markets and auctions shift weekly; we monitor, adjust, and document changes so gains compound instead of eroding.", icon: "https://cdn.lordicon.com/lewtedlh.json" },
     ],
     faqs: [
-      { id: 1, question: "How much does a UI/UX design project cost?", answer: "The cost of a UI/UX design project varies depending on factors like complexity, scope, and customization. After assessing your requirements, Webfudge provides a detailed proposal outlining the project's scope, timeline, and associated costs. Our goal is to balance transparent pricing with delivering high-quality solutions tailored to your unique business objectives." },
-      { id: 2, question: "How long does a typical UI/UX design project take?", answer: "The duration of a UI/UX design project varies based on its scope and complexity. For example, smaller tasks like audits can be completed faster, while larger, more intricate projects may require more time. During our initial discussions, we'll provide a clear timeline tailored to your specific needs and objectives, keeping you informed at every step." },
-      { id: 3, question: "What deliverables can I expect from a UI/UX design project?", answer: "At Webfudge, every project is tailored to your specific goals, ensuring you receive a comprehensive range of deliverables. These typically include user flows, wireframes, high-fidelity UI designs, interactive prototypes, and a cohesive design system or component library. We also provide finalized assets and documentation to ensure a seamless handoff to your development team." },
-      { id: 4, question: "Do I need both UI and UX design services?", answer: "Yes, the UI (user interface) and UX (user experience) designs complement each other. While UX focuses on the structure and usability of your product, UI brings it to life with engaging visuals and interactions. At Webfudge, we combine both to create designs that are not only intuitive but also visually compelling." },
-      { id: 5, question: "How can I enhance my existing product's UI/UX design?", answer: "If you're looking to improve your current product's user interface and experience, our UI/UX audit is an excellent starting point. We'll conduct a comprehensive analysis to identify areas for enhancement and provide actionable recommendations to elevate your product's design and usability." },
-      { id: 6, question: "Will my design be fully responsive and ready for development?", answer: "Absolutely. At Webfudge, we make sure your design is optimized for all devices — desktop, tablet, and mobile — so users enjoy a consistent experience wherever they go. We also prepare every design for a seamless handoff to development, providing organized layers, labeled assets, and detailed design specifications." },
+      { id: 1, question: "How much does performance marketing management cost?", answer: "Investment depends on ad spend, number of channels, creative volume, and reporting depth. After a short discovery, Webfudge proposes a clear scope—media management, creative production, and measurement—so you know fees and expected effort before you commit." },
+      { id: 2, question: "How long until we see results?", answer: "Learning phases vary by channel and competition. Many accounts show directional improvement within weeks; mature optimization and stable CPL or ROAS often take a few months of structured testing. We set expectations up front and review progress on a regular cadence." },
+      { id: 3, question: "Which channels do you run?", answer: "We commonly manage Google Ads, Meta, and LinkedIn for B2B, and add or prioritize channels based on your buyers and economics. The mix is always tied to where your ICP actually spends attention and budget." },
+      { id: 4, question: "Do you only manage ads, or also landing pages?", answer: "Performance improves when ad promise and post-click experience match. We collaborate on landing page and form recommendations—often alongside your site or dev team—and can scope CRO tests where it moves the needle." },
+      { id: 5, question: "How do you report on success?", answer: "We align on primary KPIs (leads, SQLs, pipeline, revenue, or ROAS) and build reporting that ties platform data to your CRM where possible. You get honest readouts, not cherry-picked screenshots." },
+      { id: 6, question: "Can you audit our existing ad accounts?", answer: "Yes. An account and tracking audit is a strong starting point to find waste, structural issues, and quick wins before scaling spend." },
     ],
-    relatedServices: ["uiux-design"],
+    relatedServices: ["website-landing-page-development", "graphic-creative-design", "brand-identity-design"],
   },
 
   "website-landing-page-development": {

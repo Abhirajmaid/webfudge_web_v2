@@ -16,19 +16,19 @@ const lightenOnScroll = {
 
 const stats = [
   {
-    value: "03+",
+    value: "3.5+",
     title: "Years of experience",
     description:
       "Helping brands grow with creative and impactful solutions.",
   },
   {
-    value: "50+",
+    value: "49+",
     title: "Completed projects",
     description:
       "Successfully delivering results across industries with proven expertise.",
   },
   {
-    value: "95%",
+    value: "92%",
     title: "Satisfied Clients",
     description:
       "Our commitment to quality and dedication ensures business success.",

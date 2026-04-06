@@ -8,38 +8,16 @@ import SectionHeader from "@/components/layout/SectionHeader";
 import Button from "@/components/ui/Button";
 import { fadeIn, staggerContainer, viewport } from "@/lib/aboutAnimations";
 
-function GlobeIcon({ className }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      <path d="M2 12h20" />
-    </svg>
-  );
-}
-
+/** Grid uses /public/images/ClientLogos/1.png … 8.png — overwrite those files to refresh logos. */
 const logos = [
-  { src: "/images/ClientLogos/1.png" },
-  { src: "/images/ClientLogos/2.png" },
-  { src: "/images/ClientLogos/3.png" },
-  { src: "/images/ClientLogos/4.png" },
-  { src: "/images/ClientLogos/5.png" },
-  { src: "/images/ClientLogos/6.png" },
-  { src: "/images/ClientLogos/7.png" },
-  {
-    label: "150+ clients worldwide",
-    icon: GlobeIcon,
-  },
+  { src: "/images/ClientLogos/20.png", name: "URB Insurance" },
+  { src: "/images/ClientLogos/19.png", name: "PositiEV" },
+  { src: "/images/ClientLogos/3.png", name: "MMJ" },
+  { src: "/images/ClientLogos/9.png", name: "vasileios" },
+  { src: "/images/ClientLogos/13.png", name: "evi" },
+  { src: "/images/ClientLogos/11.png", name: "Xtrawrkx" },
+  { src: "/images/ClientLogos/7.png", name: "R.K. Chaiwala" },
+  { src: "/images/ClientLogos/8.png", name: "Sahayata" },
 ];
 
 export default function AboutClients() {
@@ -81,8 +59,7 @@ export default function AboutClients() {
             const isFirstColMobile = index % 2 === 0;
             const isFirstColDesktop = index % 4 === 0;
             const restoreLeftBorderOnMd = index % 4 === 2;
-            const Icon = item.icon;
-            const key = item.src ?? item.label;
+            const key = item.src;
             return (
               <motion.div
                 key={key}
@@ -91,27 +68,16 @@ export default function AboutClients() {
                   } ${isFirstColMobile ? "border-l-0" : "border-l"} ${restoreLeftBorderOnMd ? "md:border-l" : ""
                   } ${isFirstColDesktop ? "md:border-l-0" : ""}`}
               >
-                <div className="opacity-80 hover:opacity-100 transition flex items-center justify-center gap-2 w-full h-full px-4">
-                  {item.src ? (
-                    <div className="relative w-full h-16 md:h-20 max-w-[140px]">
-                      <Image
-                        src={item.src}
-                        alt={item.name}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 50vw, 140px"
-                      />
-                    </div>
-                  ) : (
-                    <>
-                      {Icon && (
-                        <Icon className="w-5 h-5 shrink-0" />
-                      )}
-                      <span className="text-sm font-medium md:text-base">
-                        {item.label}
-                      </span>
-                    </>
-                  )}
+                <div className="opacity-80 hover:opacity-100 transition flex items-center justify-center w-full h-full px-4">
+                  <div className="relative w-full h-16 md:h-20 max-w-[140px]">
+                    <Image
+                      src={item.src}
+                      alt={item.name ?? "Client logo"}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 50vw, 140px"
+                    />
+                  </div>
                 </div>
               </motion.div>
             );

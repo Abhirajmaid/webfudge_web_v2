@@ -53,8 +53,8 @@ function HeaderGraphic() {
  * @param {string} titleLine1 - First line of heading (white)
  * @param {string} titleLine2 - Second line of heading (accent color)
  * @param {string} tagline - Subtext below heading
- * @param {string} [ctaText] - Button label (e.g. "Let's talk")
- * @param {string} [ctaHref] - Button link (e.g. "/contact")
+ * @param {string|null} [ctaText] - Button label; omit both ctaText and ctaHref to hide CTA
+ * @param {string|null} [ctaHref] - Button link
  * @param {React.ReactNode} [rightGraphic] - Custom right-side graphic; default = logo_glass image
  */
 export default function PageHeaderDark({
@@ -62,8 +62,8 @@ export default function PageHeaderDark({
   titleLine1,
   titleLine2,
   tagline,
-  ctaText = "Let's talk",
-  ctaHref = "/contact",
+  ctaText = null,
+  ctaHref = null,
   rightGraphic,
 }) {
   return (

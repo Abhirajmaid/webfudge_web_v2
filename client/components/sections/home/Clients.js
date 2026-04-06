@@ -19,7 +19,7 @@ export default function Clients() {
           transition={{ duration: 0.5 }}
           className="text-center text-base md:text-lg font-medium text-neutral-800 mb-12 max-w-3xl mx-auto"
         >
-          Empowered 100+ Startups and 100+ Business with the Investors like
+          Empowered 49+ Startups and Businesses across India
         </motion.p>
 
         <div className="relative overflow-hidden">
@@ -38,7 +38,7 @@ export default function Clients() {
             {clients.map((item, i) => (
               <div
                 key={`${item.name}-${i}`}
-                className="flex items-center justify-center flex-shrink-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300 select-none"
+                className="flex items-center justify-center flex-shrink-0 transition-all duration-300 select-none"
               >
                 {item.logo ? (
                   <div className="relative w-auto h-14 lg:w-auto lg:h-20 shrink-0">

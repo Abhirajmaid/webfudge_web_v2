@@ -120,14 +120,7 @@ export default function Hero({
             initial="hidden"
             animate="show"
           >
-            <motion.div variants={fadeUp}>
-              <span className="inline-flex items-center gap-2 bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full text-sm font-medium select-none">
-                <span className="flex items-center gap-0.5" aria-label="5 stars">
-                  {[0, 1, 2, 3, 4].map((i) => <Star key={i} />)}
-                </span>
-                Trusted by 50+ ambitious brands worldwide
-              </span>
-            </motion.div>
+            
 
             <motion.h1
               variants={fadeUp}

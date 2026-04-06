@@ -46,29 +46,38 @@ export const clients = [
         introduction: "Topee is a male wig and hair solution brand that wanted a stripped-back, confident identity — less clinical, more lifestyle — with typography and visuals that feel modern and intentional.",
         solution_offered: "We created a minimalist brand system around a strong logotype, restrained black-and-white photography direction, and sharp copy cues. The result is a cohesive look that supports premium positioning and clear storytelling for men's hair solutions."
     },
+
     {
-        id: 19,
-        title: "Yashraj Group Website",
+        id: 13,
+        title: "Greenways EVI Creatives",
         fav: true,
-        link: "https://www.behance.net/gallery/247016833/Yashraj-Infrastructure-Corporate-Website-UIUX-Design",
-        img_url: "/images/clients/yashraj/1 (2).png",
-        project_imgs: [],
-        short_des: "Website design and development for Yashraj Group, focused on infrastructure-led storytelling and lead generation.",
+        img_url: "/images/clients/evi/evi2.jpg",
+        project_imgs: [
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037908/Greenways/poster_4_black_nhrrkw.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_3_white_emc4he.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_6_shspdm.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/Frame_3_kberuw.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/A5_-_53_zwrjaj.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037896/Greenways/Instagram_post_-_7_a9cjby.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037901/Greenways/poster_1_2_y1js8o.jpg"
+        ],
+        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
         services_offered: [
-            "Website Development",
-            "UI/UX Design",
-            "Responsive Design",
-            "Landing Page Optimization",
+            "Graphic Design",
+            "Creative Design",
+            "Brand Collateral"
         ],
         key_highlights: [
-            "Built a modern corporate website aligned with infrastructure and construction branding",
-            "Structured content sections for services, projects, and case studies",
-            "Designed clear calls-to-action to improve inquiry conversion",
-            "Created a responsive layout for smooth experience across devices",
+            "Delivered 15+ unique creative assets for print and digital",
+            "Helped improve brand social engagement by 40%",
+            "Designed 5 new marketing collateral pieces resulting in a 25% increase in campaign reach"
         ],
-        introduction: "Yashraj Group needed a professional web presence to showcase their infrastructure expertise, service offerings, and project portfolio while building trust with government and private stakeholders.",
-        solution_offered: "We designed and developed a performance-focused website with a clean visual identity, clear navigation, and conversion-friendly content architecture. The experience highlights mission, services, project stories, and trust signals while remaining fast and fully responsive."
+        introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
+        solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
     },
+    
     {
         id: 9,
         title: "Xtrawrkx Website",
@@ -99,35 +108,31 @@ export const clients = [
         solution_offered:
             "We designed and developed a full-stack website tailored to Xtrawrkx. The UI/UX focuses on clarity and speed, allowing users to browse, filter, and explore events and consultancy services, resources easily.  We built the backend on Firebase, enabling dynamic content management, and deployed the entire solution on AWS for scalability and performance. We also integrated event registration and payment integration for the events."
     },
+
     {
-        id: 8,
-        title: "Xtrawrkx Manufacturing Businesses",
-        link: "https://www.behance.net/gallery/247017045/Xtrawrkx-Manufacturing-Business-Management-Platform",
-        img_url: "/images/clients/xmb/xmb_mockup.png",
-        project_imgs: [
-            "/images/clients/xmb/xmb_ss.png",
-        ],
-        short_des: "Complete Website UI/UX Design and Development for Xtrawrkx Manufacturing Businesses",
+        id: 19,
+        title: "Yashraj Group Website",
+        fav: true,
+        link: "https://www.behance.net/gallery/247016833/Yashraj-Infrastructure-Corporate-Website-UIUX-Design",
+        img_url: "/images/clients/yashraj/1 (2).png",
+        project_imgs: [],
+        short_des: "Website design and development for Yashraj Group, focused on infrastructure-led storytelling and lead generation.",
         services_offered: [
             "Website Development",
             "UI/UX Design",
-            "CMS Development",
-            "SEO Optimization",
-            "Cloud Deployment",
+            "Responsive Design",
+            "Landing Page Optimization",
         ],
         key_highlights: [
-            "Designed a responsive website for Xtrawrkx Manufacturing Businesses",
-            "Increased the number of conversions by 30%",
-            "Increased the number of leads by 20%",
-            "Content Management System (CMS) for the website",
-            "Deployed the entire solution on AWS for scalability and performance",
+            "Built a modern corporate website aligned with infrastructure and construction branding",
+            "Structured content sections for services, projects, and case studies",
+            "Designed clear calls-to-action to improve inquiry conversion",
+            "Created a responsive layout for smooth experience across devices",
         ],
-
-        introduction:
-            "Xtrawrkx Manufacturing Businesses needed a modern and professional website to showcase their products and services. They needed a website that was easy to navigate and had a modern look and feel.",
-        solution_offered:
-            "We designed and developed a full-stack website tailored to the manufacturing businesses. The UI/UX focuses on clarity and speed, allowing users to browse, filter, and explore products and services easily. We built the backend on Firebase, enabling dynamic content management, and deployed the entire solution on AWS for scalability and performance."
+        introduction: "Yashraj Group needed a professional web presence to showcase their infrastructure expertise, service offerings, and project portfolio while building trust with government and private stakeholders.",
+        solution_offered: "We designed and developed a performance-focused website with a clean visual identity, clear navigation, and conversion-friendly content architecture. The experience highlights mission, services, project stories, and trust signals while remaining fast and fully responsive."
     },
+
     {
         id: 1,
         title: "XSOS 2025",
@@ -163,6 +168,36 @@ export const clients = [
         introduction: "Xtrawrkx, a diverse business group, collaborated with us to amplify their visual presence across both digital and on-ground experiences. One of the key highlights was their flagship event XSOS 2025, which required comprehensive design support under tight timelines.",
         solution_offered: "For XSOS 2025, we created a complete design system including delegate and organizer ID cards, welcome banners, directional sunboards, table tents, backdrops, and stage graphics. Alongside, we delivered high-performing digital creatives and ad visuals to drive campaigns and enhance their social presence."
     },
+    {
+        id: 8,
+        title: "Xtrawrkx Manufacturing Businesses",
+        link: "https://www.behance.net/gallery/247017045/Xtrawrkx-Manufacturing-Business-Management-Platform",
+        img_url: "/images/clients/xmb/xmb_mockup.png",
+        project_imgs: [
+            "/images/clients/xmb/xmb_ss.png",
+        ],
+        short_des: "Complete Website UI/UX Design and Development for Xtrawrkx Manufacturing Businesses",
+        services_offered: [
+            "Website Development",
+            "UI/UX Design",
+            "CMS Development",
+            "SEO Optimization",
+            "Cloud Deployment",
+        ],
+        key_highlights: [
+            "Designed a responsive website for Xtrawrkx Manufacturing Businesses",
+            "Increased the number of conversions by 30%",
+            "Increased the number of leads by 20%",
+            "Content Management System (CMS) for the website",
+            "Deployed the entire solution on AWS for scalability and performance",
+        ],
+
+        introduction:
+            "Xtrawrkx Manufacturing Businesses needed a modern and professional website to showcase their products and services. They needed a website that was easy to navigate and had a modern look and feel.",
+        solution_offered:
+            "We designed and developed a full-stack website tailored to the manufacturing businesses. The UI/UX focuses on clarity and speed, allowing users to browse, filter, and explore products and services easily. We built the backend on Firebase, enabling dynamic content management, and deployed the entire solution on AWS for scalability and performance."
+    },
+
     {
         id: 2,
         title: "Plantozone Green India Website",
@@ -304,36 +339,7 @@ export const clients = [
         introduction: "The XSOS branding project entailed creating a distinctive, memorable logo and a unified visual identity to build recognition and trust. The brand needed assets to be deployed consistently across digital touchpoints and events.",
         solution_offered: "We delivered a unique logo symbolizing XSOS's core values, supported by an extensive visual identity system. The project included development of usage guidelines, color palette, stationery design, digital assets, and scalable branding materials to ensure cohesive representation across web, mobile, merchandise, and event collateral."
     },
-    {
-        id: 13,
-        title: "Greenways EVI Creatives",
-        fav: true,
-        img_url: "/images/clients/evi/evi2.jpg",
-        project_imgs: [
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037908/Greenways/poster_4_black_nhrrkw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_3_white_emc4he.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_6_shspdm.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/Frame_3_kberuw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/A5_-_53_zwrjaj.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037896/Greenways/Instagram_post_-_7_a9cjby.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037901/Greenways/poster_1_2_y1js8o.jpg"
-        ],
-        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
-        services_offered: [
-            "Graphic Design",
-            "Creative Design",
-            "Brand Collateral"
-        ],
-        key_highlights: [
-            "Delivered 15+ unique creative assets for print and digital",
-            "Helped improve brand social engagement by 40%",
-            "Designed 5 new marketing collateral pieces resulting in a 25% increase in campaign reach"
-        ],
-        introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
-        solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
-    },
+    
     {
         id: 13,
         title: "EVI (Greenways Mobility) Branding & Logo",
