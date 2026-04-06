@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/layout/Section";
@@ -27,7 +28,43 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
 };
 
+/** Horizontal marquee speed — pixels per second (device-independent). */
+const MARQUEE_SPEED_PX_PER_S = 80;
+
 export default function Testimonial() {
+  const marqueeRef = useRef(null);
+  const pausedRef = useRef(false);
+  const rafRef = useRef(0);
+  const lastTimeRef = useRef(0);
+  const offsetRef = useRef(0);
+
+  useEffect(() => {
+    const track = marqueeRef.current;
+    if (!track) return;
+
+    const tick = (now) => {
+      const last = lastTimeRef.current;
+      if (last !== 0 && !pausedRef.current) {
+        const dt = Math.min((now - last) / 1000, 0.1);
+        const loopWidth = track.scrollWidth / 2;
+        if (loopWidth > 0) {
+          offsetRef.current -= MARQUEE_SPEED_PX_PER_S * dt;
+          if (offsetRef.current <= -loopWidth) {
+            offsetRef.current += loopWidth;
+          }
+          track.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+        }
+      }
+      lastTimeRef.current = now;
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
   return (
     <Section variant="muted" id="testimonials" className="min-h-screen">
       <Container size="default" className="flex items-center">
@@ -89,26 +126,27 @@ export default function Testimonial() {
             </motion.div>
 
             <div className="mt-4">
-              <style>{`
-                @keyframes wf-marquee {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .wf-marquee {
-                  display: flex;
-                  gap: 2rem;
-                  align-items: stretch;
-                  height: 100%;
-                  animation: wf-marquee 26s linear infinite;
-                }
-                .wf-marquee:hover { animation-play-state: paused; }
-                @media (min-width: 1024px) {
-                  .wf-marquee { gap: 2.5rem; }
-                }
-              `}</style>
-
               <div className="overflow-hidden h-[420px] lg:h-[450px]">
-                <div className="wf-marquee h-full">
+                <div
+                  ref={marqueeRef}
+                  className="flex h-full items-stretch gap-8 lg:gap-10"
+                  style={{ willChange: "transform" }}
+                  onMouseEnter={() => {
+                    pausedRef.current = true;
+                  }}
+                  onMouseLeave={() => {
+                    pausedRef.current = false;
+                  }}
+                  onTouchStart={() => {
+                    pausedRef.current = true;
+                  }}
+                  onTouchEnd={() => {
+                    pausedRef.current = false;
+                  }}
+                  onTouchCancel={() => {
+                    pausedRef.current = false;
+                  }}
+                >
                   {[...testimonials, ...testimonials].map((item, idx) => (
                     <motion.div
                       key={`${item.id}-${idx}`}
@@ -124,11 +162,11 @@ export default function Testimonial() {
                         </p>
                       </div>
 
-                      <p className="mt-6 flex-1 min-h-0 text-xl font-medium lg:text-xl text-neutral-800 leading-relaxed">
+                      <p className="mt-6 flex-1 min-h-0 overflow-y-auto overscroll-contain text-xl font-medium lg:text-xl text-neutral-800 leading-relaxed [scrollbar-gutter:stable]">
                         &ldquo;{item.text}&rdquo;
                       </p>
 
-                      <div className="mt-8 flex items-center gap-3 shrink-0">
+                      <div className="mt-10 sm:mt-12 flex items-center gap-3 shrink-0">
                         <div className="relative w-16 h-16 rounded-full overflow-hidden bg-neutral-200 shrink-0">
                           <Image
                             src={item.avatar}
