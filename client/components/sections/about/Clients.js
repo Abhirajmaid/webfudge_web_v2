@@ -8,16 +8,16 @@ import SectionHeader from "@/components/layout/SectionHeader";
 import Button from "@/components/ui/Button";
 import { fadeIn, staggerContainer, viewport } from "@/lib/aboutAnimations";
 
-/** Grid uses /public/images/ClientLogos/1.png … 8.png — overwrite those files to refresh logos. */
+/** About page 2×4 grid — assets under /public/images/ClientLogos/ */
 const logos = [
-  { src: "/images/ClientLogos/20.png", name: "URB Insurance" },
-  { src: "/images/ClientLogos/19.png", name: "PositiEV" },
-  { src: "/images/ClientLogos/3.png", name: "MMJ" },
-  { src: "/images/ClientLogos/9.png", name: "vasileios" },
-  { src: "/images/ClientLogos/13.png", name: "evi" },
+  { src: "/images/ClientLogos/6.png", name: "Plantozone" },
+  { src: "/images/ClientLogos/13.png", name: "EVI" },
   { src: "/images/ClientLogos/11.png", name: "Xtrawrkx" },
-  { src: "/images/ClientLogos/7.png", name: "R.K. Chaiwala" },
+  { src: "/images/ClientLogos/3.png", name: "MMJ" },
+  { src: "/images/ClientLogos/19.png", name: "PositiEV" },
   { src: "/images/ClientLogos/8.png", name: "Sahayata" },
+  { src: "/images/ClientLogos/18.png", name: "XSOS (Summit on Summits)" },
+  { stat: "49+ clients and counting" },
 ];
 
 export default function AboutClients() {
@@ -59,7 +59,8 @@ export default function AboutClients() {
             const isFirstColMobile = index % 2 === 0;
             const isFirstColDesktop = index % 4 === 0;
             const restoreLeftBorderOnMd = index % 4 === 2;
-            const key = item.src;
+            const key = item.stat ?? item.src;
+            const isStat = Boolean(item.stat);
             return (
               <motion.div
                 key={key}
@@ -68,17 +69,23 @@ export default function AboutClients() {
                   } ${isFirstColMobile ? "border-l-0" : "border-l"} ${restoreLeftBorderOnMd ? "md:border-l" : ""
                   } ${isFirstColDesktop ? "md:border-l-0" : ""}`}
               >
-                <div className="opacity-80 hover:opacity-100 transition flex items-center justify-center w-full h-full px-4">
-                  <div className="relative w-full h-16 md:h-20 max-w-[140px]">
-                    <Image
-                      src={item.src}
-                      alt={item.name ?? "Client logo"}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 50vw, 140px"
-                    />
+                {isStat ? (
+                  <p className="px-3 text-center text-base font-semibold leading-snug text-neutral-900 md:text-lg max-w-[12rem]">
+                    {item.stat}
+                  </p>
+                ) : (
+                  <div className="opacity-80 hover:opacity-100 transition flex items-center justify-center w-full h-full px-4">
+                    <div className="relative w-full h-16 md:h-20 max-w-[140px]">
+                      <Image
+                        src={item.src}
+                        alt={item.name ?? "Client logo"}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 50vw, 140px"
+                      />
+                    </div>
                   </div>
-                </div>
+                )}
               </motion.div>
             );
           })}

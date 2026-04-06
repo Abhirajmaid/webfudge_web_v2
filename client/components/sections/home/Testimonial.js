@@ -84,10 +84,10 @@ export default function Testimonial() {
               </h2>
             }
             layout="center"
-            className="mb-8 w-full"
+            className="mb-4 w-full lg:mb-8"
           />
 
-          <div className="mt-20 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-16 items-start">
+          <div className="mt-8 grid grid-cols-1 gap-12 items-start lg:mt-20 lg:gap-16 lg:grid-cols-[250px_1fr]">
             <motion.div
               variants={fadeUp}
               className="flex flex-col items-center justify-between h-[70%] my-auto text-center lg:text-left"

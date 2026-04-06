@@ -45,7 +45,10 @@ function clientMatchesService(client, serviceTitle, serviceTags) {
   return false;
 }
 
-function getRelatedForService(serviceTitle, serviceTags, limit = 6) {
+/** Number of case studies shown in the featured grid on each service detail page. */
+export const SERVICE_DETAIL_FEATURED_PROJECTS_COUNT = 4;
+
+function getRelatedForService(serviceTitle, serviceTags, limit = 48) {
   const matched = clients.filter((c) =>
     clientMatchesService(c, serviceTitle, serviceTags)
   );
@@ -67,6 +70,20 @@ export function getServiceBySlug(slug) {
 
 export function getAllServiceSlugs() {
   return Object.keys(SERVICES_BY_SLUG);
+}
+
+/** First N related projects for the service detail “featured” section (same order as `service.related`). */
+export function getServiceFeaturedProjects(service) {
+  return (service.related ?? []).slice(0, SERVICE_DETAIL_FEATURED_PROJECTS_COUNT);
+}
+
+/** Remaining related projects after the featured slice — avoids duplicating cards on the same page. */
+export function getServiceRelatedProjectsExcludingFeatured(service) {
+  const all = service.related ?? [];
+  const featuredSlugs = new Set(
+    all.slice(0, SERVICE_DETAIL_FEATURED_PROJECTS_COUNT).map((p) => p.slug)
+  );
+  return all.filter((p) => !featuredSlugs.has(p.slug));
 }
 
 /** Map detail process (step, title, description) to legacy shape (step "01", title, desc). */

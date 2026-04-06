@@ -2,6 +2,7 @@ import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import SectionHeader from "@/components/layout/SectionHeader";
 import CaseStudyCard from "@/components/ui/CaseStudyCard";
+import { getServiceRelatedProjectsExcludingFeatured } from "@/lib/servicesData";
 
 /**
  * Map service.related item to CaseStudyCard data shape (same as Case Studies page).
@@ -25,7 +26,7 @@ const RELATED_SUBTITLE =
  * Related projects — SectionHeader + 2×2 grid of CaseStudyCards.
  */
 export default function ServiceRelatedProjects({ service }) {
-  const related = service.related ?? [];
+  const related = getServiceRelatedProjectsExcludingFeatured(service);
 
   if (related.length === 0) return null;
 

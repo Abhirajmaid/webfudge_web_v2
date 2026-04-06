@@ -120,7 +120,7 @@ export default function Hero({
             initial="hidden"
             animate="show"
           >
-            
+
 
             <motion.h1
               variants={fadeUp}
@@ -168,7 +168,7 @@ export default function Hero({
                 ))}
               </div>
               <p className="text-sm text-neutral-500">
-                <strong className="font-semibold text-neutral-900">50+ brands</strong>{" "}
+                <strong className="font-semibold text-neutral-900">49+ brands</strong>{" "}
                 launched with us and counting
               </p>
             </motion.div>
@@ -184,7 +184,7 @@ export default function Hero({
             variants={panelVariant}
             initial="hidden"
             animate="show"
-            className="mt-16 lg:mt-20"
+            className="mt-16 lg:mt-20 !px-0"
           >
             <div
               aria-hidden

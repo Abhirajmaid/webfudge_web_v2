@@ -47,37 +47,30 @@ export const clients = [
         solution_offered: "We created a minimalist brand system around a strong logotype, restrained black-and-white photography direction, and sharp copy cues. The result is a cohesive look that supports premium positioning and clear storytelling for men's hair solutions."
     },
 
+
     {
-        id: 13,
-        title: "Greenways EVI Creatives",
+        id: 22,
+        title: "EVI Performance Marketing",
         fav: true,
         img_url: "/images/clients/evi/evi2.jpg",
-        project_imgs: [
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037908/Greenways/poster_4_black_nhrrkw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_3_white_emc4he.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_6_shspdm.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/Frame_3_kberuw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/A5_-_53_zwrjaj.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037896/Greenways/Instagram_post_-_7_a9cjby.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037901/Greenways/poster_1_2_y1js8o.jpg"
-        ],
-        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
+        project_imgs: [],
+        short_des: "Performance marketing for EVI (Greenways Mobility) — paid campaigns, testing, and measurable growth.",
         services_offered: [
-            "Graphic Design",
-            "Creative Design",
-            "Brand Collateral"
+            "Performance Marketing",
+            "Paid Social",
+            "Campaign Strategy",
+            "Conversion Optimization",
+            "Analytics & Reporting",
         ],
         key_highlights: [
-            "Delivered 15+ unique creative assets for print and digital",
-            "Helped improve brand social engagement by 40%",
-            "Designed 5 new marketing collateral pieces resulting in a 25% increase in campaign reach"
+            "Campaign structure tuned to EVI’s mobility and brand goals",
+            "Ongoing creative and audience testing to improve efficiency",
+            "Clear reporting across channels for accountable performance",
         ],
-        introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
-        solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
+        introduction: "EVI needed performance marketing that could scale qualified interest in their electric mobility offering while staying aligned with a premium, consistent brand presence.",
+        solution_offered: "We ran performance programs across paid social and related digital channels with structured testing, audience refinement, creative iteration, and regular optimization so budgets moved toward stronger funnel outcomes and clearer visibility into what was working.",
     },
-    
+
     {
         id: 9,
         title: "Xtrawrkx Website",
@@ -219,6 +212,36 @@ export const clients = [
         solution_offered: "Our team handled end-to-end web design and development — starting with brand-aligned UI/UX mockups, mobile-first responsive layouts, and integrating a scalable CMS for easy content updates. We optimized loading speed, improved navigation flows, and ensured SEO best practices were baked in. From product listings to contact forms, every interaction was designed to delight and convert."
     },
     {
+        id: 13,
+        title: "Greenways EVI Creatives",
+        fav: true,
+        img_url: "/images/clients/evi/evi2.jpg",
+        project_imgs: [
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037908/Greenways/poster_4_black_nhrrkw.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_3_white_emc4he.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_6_shspdm.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/Frame_3_kberuw.jpg",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/A5_-_53_zwrjaj.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037896/Greenways/Instagram_post_-_7_a9cjby.png",
+            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037901/Greenways/poster_1_2_y1js8o.jpg"
+        ],
+        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
+        services_offered: [
+            "Graphic Design",
+            "Creative Design",
+            "Brand Collateral"
+        ],
+        key_highlights: [
+            "Delivered 15+ unique creative assets for print and digital",
+            "Helped improve brand social engagement by 40%",
+            "Designed 5 new marketing collateral pieces resulting in a 25% increase in campaign reach"
+        ],
+        introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
+        solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
+    },
+    {
         id: 5,
         title: "Mukund Maid Jewellers Website",
         fav: true,
@@ -339,7 +362,7 @@ export const clients = [
         introduction: "The XSOS branding project entailed creating a distinctive, memorable logo and a unified visual identity to build recognition and trust. The brand needed assets to be deployed consistently across digital touchpoints and events.",
         solution_offered: "We delivered a unique logo symbolizing XSOS's core values, supported by an extensive visual identity system. The project included development of usage guidelines, color palette, stationery design, digital assets, and scalable branding materials to ensure cohesive representation across web, mobile, merchandise, and event collateral."
     },
-    
+
     {
         id: 13,
         title: "EVI (Greenways Mobility) Branding & Logo",
