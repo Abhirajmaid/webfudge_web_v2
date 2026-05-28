@@ -11,7 +11,7 @@ export const NAV_LINKS = [
   { label: "Case Studies", href: "/case-studies" },
   // { label: "Pricing", href: "/pricing" },
   { label: "About Us", href: "/about" },
-  { label: "Resources", href: "/blogs", arrow: true },
+  // { label: "Resources", href: "/blogs", arrow: true },
 ];
 
 // Structured services menu used in the mega/fullscreen menu
@@ -153,6 +153,31 @@ export const FOOTER_LINKS = [
       { label: "Terms of Service", href: "/terms" },
       { label: "Cookie Policy", href: "/cookies" },
     ],
+  },
+];
+
+// Footer contact block (displayed below main footer)
+export const FOOTER_CONTACT_INFO = {
+  emailLabel: "Email Us",
+  email: "contact@webfudge.in",
+  phoneLabel: "WhatsApp Us",
+  phone: "(+91)7385302967",
+  phoneHref: "https://wa.me/917385302967",
+};
+
+// Global office cards shown in footer
+export const FOOTER_OFFICES = [
+  {
+    country: "INDIA",
+    flag: "/flag/india.svg",
+  },
+  {
+    country: "USA",
+    flag: "/flag/usa.svg",
+  },
+  {
+    country: "UAE",
+    flag: "/flag/uae.svg",
   },
 ];
 

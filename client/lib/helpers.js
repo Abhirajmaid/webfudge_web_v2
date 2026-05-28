@@ -59,8 +59,8 @@ export function isValidEmail(email) {
 }
 
 /**
- * Validate a contact form payload.
- * @param {{ name: string, email: string, company: string, message: string }} fields
+ * Validate contact form fields (EmailJS — same rules as legacy site).
+ * @param {{ name: string, company_name: string, user_email: string, mobile_number: string, message?: string }} fields
  * @returns {{ valid: boolean, errors: Record<string, string> }}
  */
 export function validateContactForm(fields) {
@@ -70,12 +70,19 @@ export function validateContactForm(fields) {
     errors.name = "Please enter your full name.";
   }
 
-  if (!fields.email || !isValidEmail(fields.email)) {
-    errors.email = "Please enter a valid email address.";
+  if (!fields.company_name || fields.company_name.trim().length < 1) {
+    errors.company_name = "Please enter your company name.";
   }
 
-  if (!fields.message || fields.message.trim().length < 10) {
-    errors.message = "Message must be at least 10 characters.";
+  if (!fields.user_email || !isValidEmail(fields.user_email)) {
+    errors.user_email = "Please enter a valid email address.";
+  }
+
+  const phoneDigits = String(fields.mobile_number || "").replace(/\D/g, "");
+  if (!phoneDigits) {
+    errors.mobile_number = "Please enter your contact number.";
+  } else if (phoneDigits.length !== 10) {
+    errors.mobile_number = "Please enter a valid 10-digit mobile number.";
   }
 
   return {

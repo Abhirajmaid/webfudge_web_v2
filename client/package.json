@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^6.0.2",
     "@lordicon/element": "^2.0.2",
     "clsx": "^2.1.1",

@@ -28,8 +28,8 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 16);
-      // Close Services mega-menu on any document scroll (wheel, trackpad, touch on page)
-      setOpenMenu((m) => (m === "services" ? null : m));
+      // Close desktop mega-dropdowns on any page scroll
+      setOpenMenu((m) => (m === "services" || m === "resources" ? null : m));
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

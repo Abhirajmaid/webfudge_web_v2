@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Section from "@/components/layout/Section";
@@ -9,9 +10,21 @@ import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import { validateContactForm } from "@/lib/helpers";
 
-const initialForm = { name: "", email: "", company: "", message: "" };
+/** Same EmailJS config as legacy webfudge_site contact form */
+const EMAILJS_SERVICE_ID = "service_pfw4cle";
+const EMAILJS_TEMPLATE_ID = "template_2r0898d";
+const EMAILJS_PUBLIC_KEY = "jgD1dSgL1VKS1UTD5";
+
+const initialForm = {
+  name: "",
+  company_name: "",
+  user_email: "",
+  mobile_number: "",
+  message: "",
+};
 
 export default function ContactForm() {
+  const formRef = useRef(null);
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
@@ -37,23 +50,12 @@ export default function ContactForm() {
     setErrors({});
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        if (res.status === 400 && data.errors) {
-          setErrors(data.errors);
-          setStatus("idle");
-          return;
-        }
-        setStatus("error");
-        return;
-      }
-
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
       setStatus("success");
       setForm(initialForm);
     } catch {
@@ -127,9 +129,9 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Message sent!</h3>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Thanks for contacting us!</h3>
                   <p className="text-sm text-neutral-500">
-                    Thanks for reaching out. We&apos;ll get back to you within 24 hours.
+                    We&apos;ll get back to you soon.
                   </p>
                 </div>
                 <Button variant="secondary" size="sm" onClick={() => setStatus("idle")}>
@@ -138,6 +140,7 @@ export default function ContactForm() {
               </div>
             ) : (
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 noValidate
                 className="rounded-3xl border border-neutral-100 bg-white p-8 sm:p-10 flex flex-col gap-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
@@ -146,7 +149,7 @@ export default function ContactForm() {
                   <Input
                     label="Full Name"
                     name="name"
-                    placeholder="Jane Smith"
+                    placeholder="First Name Last Name"
                     value={form.name}
                     onChange={handleChange}
                     error={errors.name}
@@ -154,26 +157,41 @@ export default function ContactForm() {
                     className="[&_input]:rounded-xl [&_input]:py-3.5 [&_input]:border-neutral-200 [&_label]:text-neutral-900"
                   />
                   <Input
-                    label="Email Address"
-                    name="email"
-                    type="email"
-                    placeholder="jane@company.com"
-                    value={form.email}
+                    label="Company Name"
+                    name="company_name"
+                    placeholder="ABC Limited"
+                    value={form.company_name}
                     onChange={handleChange}
-                    error={errors.email}
+                    error={errors.company_name}
                     required
                     className="[&_input]:rounded-xl [&_input]:py-3.5 [&_input]:border-neutral-200 [&_label]:text-neutral-900"
                   />
                 </div>
 
-                <Input
-                  label="Company (optional)"
-                  name="company"
-                  placeholder="Your company name"
-                  value={form.company}
-                  onChange={handleChange}
-                  className="[&_input]:rounded-xl [&_input]:py-3.5 [&_input]:border-neutral-200 [&_label]:text-neutral-900"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <Input
+                    label="Email Address"
+                    name="user_email"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={form.user_email}
+                    onChange={handleChange}
+                    error={errors.user_email}
+                    required
+                    className="[&_input]:rounded-xl [&_input]:py-3.5 [&_input]:border-neutral-200 [&_label]:text-neutral-900"
+                  />
+                  <Input
+                    label="Contact Number"
+                    name="mobile_number"
+                    type="tel"
+                    placeholder="+91"
+                    value={form.mobile_number}
+                    onChange={handleChange}
+                    error={errors.mobile_number}
+                    required
+                    className="[&_input]:rounded-xl [&_input]:py-3.5 [&_input]:border-neutral-200 [&_label]:text-neutral-900"
+                  />
+                </div>
 
                 <Input
                   label="Message"
@@ -183,8 +201,6 @@ export default function ContactForm() {
                   placeholder="Tell us about your project, goals, and timeline…"
                   value={form.message}
                   onChange={handleChange}
-                  error={errors.message}
-                  required
                   className="[&_textarea]:rounded-xl [&_textarea]:py-3.5 [&_textarea]:border-neutral-200 [&_label]:text-neutral-900"
                 />
 
@@ -202,13 +218,7 @@ export default function ContactForm() {
                   disabled={status === "submitting"}
                   showIcon={status !== "submitting"}
                 >
-                  {status === "submitting" ? (
-                    <>
-                      Sending…
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
+                  {status === "submitting" ? "Sending…" : "Send Message"}
                 </Button>
               </form>
             )}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -11,8 +12,8 @@ import Button from "@/components/ui/Button";
 const PLANS = [
   {
     id: 1,
+    key: "founder",
     name: "Founder & Early Teams",
-    price: "₹1,19,000",
     description: "Perfect for startups launching their first strong digital presence.",
     features: [
       "Branding Starter Kit",
@@ -31,8 +32,8 @@ const PLANS = [
   },
   {
     id: 2,
+    key: "enterprise",
     name: "Scale-Ups & Enterprise",
-    price: "₹2,49,000",
     description: "For growing companies that need a scalable digital platform and strong brand identity.",
     features: [
       "Full Brand Identity",
@@ -50,6 +51,27 @@ const PLANS = [
     cta: "Book A Scoping Call",
   },
 ];
+
+const COUNTRY_OPTIONS = [
+  { code: "IN", label: "India" },
+  { code: "US", label: "USA" },
+  { code: "AE", label: "UAE" },
+];
+
+const COUNTRY_PRICING = {
+  IN: {
+    founder: "₹1,19,000",
+    enterprise: "₹2,49,000",
+  },
+  US: {
+    founder: "$2,499",
+    enterprise: "$3,999",
+  },
+  AE: {
+    founder: "AED 8,000",
+    enterprise: "AED 13,000",
+  },
+};
 
 const gradientMap = {
   rose:
@@ -73,7 +95,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-function PricingCard({ plan, index }) {
+function PricingCard({ plan }) {
   const gradient = gradientMap[plan.gradient] ?? gradientMap.rose;
 
   return (
@@ -125,6 +147,16 @@ function PricingCard({ plan, index }) {
 }
 
 export default function Pricing() {
+  const [selectedCountry, setSelectedCountry] = useState("IN");
+  const plansWithCountryPrice = useMemo(
+    () =>
+      PLANS.map((plan) => ({
+        ...plan,
+        price: COUNTRY_PRICING[selectedCountry]?.[plan.key] ?? COUNTRY_PRICING.IN[plan.key],
+      })),
+    [selectedCountry]
+  );
+
   return (
     <Section id="pricing" variant="default">
       <Container>
@@ -141,6 +173,29 @@ export default function Pricing() {
           layout="center"
         />
 
+        <div className="mt-10 flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white p-1">
+            {COUNTRY_OPTIONS.map((country) => {
+              const isActive = selectedCountry === country.code;
+              return (
+                <button
+                  key={country.code}
+                  type="button"
+                  onClick={() => setSelectedCountry(country.code)}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-neutral-900 text-white"
+                      : "text-neutral-700 hover:bg-neutral-100"
+                  }`}
+                  aria-pressed={isActive}
+                >
+                  {country.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -148,7 +203,7 @@ export default function Pricing() {
           variants={stagger}
           className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-3"
         >
-          {PLANS.map((plan) => (
+          {plansWithCountryPrice.map((plan) => (
             <PricingCard key={plan.id} plan={plan} />
           ))}
         </motion.div>

@@ -3,7 +3,12 @@ import Image from "next/image";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
-import { SITE_NAME, SERVICES_MENU } from "@/lib/constants";
+import {
+  SITE_NAME,
+  SERVICES_MENU,
+  FOOTER_CONTACT_INFO,
+  FOOTER_OFFICES,
+} from "@/lib/constants";
 
 // Services list — only main service titles for footer
 const SERVICES = SERVICES_MENU.map((group) => group.title);
@@ -51,8 +56,66 @@ export default function Footer() {
 
   return (
     <footer className="print:hidden">
+
       <Section variant="muted" className="pt-12 md:pt-20 !pb-8 md:!pb-10">
         <Container size="wide">
+          {/* Contact + locations strip */}
+          <div className="mb-14 border-t border-neutral-200 pt-8 md:pt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
+              <div className="lg:col-span-3">
+                <div className="space-y-8">
+                  <div>
+                    <p className="text-md text-neutral-500">{FOOTER_CONTACT_INFO.emailLabel}</p>
+                    <a
+                      href={`mailto:${FOOTER_CONTACT_INFO.email}`}
+                      className="mt-2 inline-block text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors"
+                    >
+                      {FOOTER_CONTACT_INFO.email}
+                    </a>
+                  </div>
+
+                  <div>
+                    <p className="text-md text-neutral-500">{FOOTER_CONTACT_INFO.phoneLabel}</p>
+                    <a
+                      href={FOOTER_CONTACT_INFO.phoneHref}
+                      className="mt-2 inline-flex items-center gap-3 text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors"
+                    >
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#DCF8E8] text-lg">
+                        💬
+                      </span>
+                      <span>{FOOTER_CONTACT_INFO.phone}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-9">
+                <h4 className="text-center lg:text-left text-2xl md:text-[34px] leading-tight font-medium text-neutral-900">
+                  Limited Liability Company Based In
+                </h4>
+
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 border border-neutral-200">
+                  {FOOTER_OFFICES.map((office, index) => (
+                    <div
+                      key={office.country}
+                      className={`p-6 md:p-7 ${index !== FOOTER_OFFICES.length - 1 ? "border-b sm:border-b-0 sm:border-r border-neutral-200" : ""}`}
+                    >
+                      <Image
+                        src={office.flag}
+                        alt={`${office.country} flag`}
+                        width={40}
+                        height={28}
+                        className="h-12 w-auto object-contain"
+                      />
+                      <p className="mt-4 text-lg font-semibold tracking-wide text-neutral-900">
+                        {office.country}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-20 items-start">
             {/* Column 1 — Brand */}
             <div>
@@ -122,6 +185,8 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+
+
 
           {/* Bottom row */}
           <div className="mt-10 md:mt-16 pt-6 md:pt-8 border-t border-neutral-200 text-sm text-neutral-500 flex flex-col md:flex-row justify-between gap-4 text-center md:text-left">
