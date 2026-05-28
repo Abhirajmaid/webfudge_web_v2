@@ -24,11 +24,52 @@ function norm(s) {
   return (s || "").toLowerCase().trim();
 }
 
+function termsOverlap(a, b) {
+  return a === b || a.includes(b) || b.includes(a);
+}
+
+/** Client actually delivered website / landing-page work (not ads-only). */
+const WEBSITE_CLIENT_OFFERINGS = [
+  "website development",
+  "ui/ux design",
+  "cms development",
+  "landing page",
+  "responsive design",
+  "ecommerce development",
+  "seo optimization",
+  "cloud deployment",
+  "accessibility",
+];
+
+function clientHasWebsiteOffering(client) {
+  const offered = (client.services_offered || []).map(norm);
+  return offered.some((o) =>
+    WEBSITE_CLIENT_OFFERINGS.some((term) => termsOverlap(o, term))
+  );
+}
+
+function clientHasPerformanceMarketingOffering(client) {
+  const offered = (client.services_offered || []).map(norm);
+  return offered.some((o) => termsOverlap(o, "performance marketing"));
+}
+
+function isWebsiteServiceTitle(serviceTitle) {
+  const title = norm(serviceTitle);
+  return title.includes("website") || title.includes("landing page");
+}
+
+function isPerformanceMarketingServiceTitle(serviceTitle) {
+  return norm(serviceTitle).includes("performance marketing");
+}
+
 /**
  * True only when the client's services_offered overlaps with this service's tags.
  * We match on tags only so that e.g. "Graphic & Creative Design" shows only
  * projects that have Graphic Design / Marketing Creatives etc., not website/UI projects
  * that merely contain the word "design".
+ *
+ * Website and performance marketing also require matching offerings on the project
+ * so shared terms (e.g. conversion optimization) do not cross-list projects.
  */
 function clientMatchesService(client, serviceTitle, serviceTags) {
   const offered = (client.services_offered || []).map(norm);
@@ -37,12 +78,26 @@ function clientMatchesService(client, serviceTitle, serviceTags) {
   const tagTerms = (serviceTags || []).map(norm).filter(Boolean);
   if (tagTerms.length === 0) return false;
 
+  let tagMatch = false;
   for (const o of offered) {
     for (const tag of tagTerms) {
-      if (o === tag || o.includes(tag) || tag.includes(o)) return true;
+      if (termsOverlap(o, tag)) {
+        tagMatch = true;
+        break;
+      }
     }
+    if (tagMatch) break;
   }
-  return false;
+  if (!tagMatch) return false;
+
+  if (isWebsiteServiceTitle(serviceTitle)) {
+    return clientHasWebsiteOffering(client);
+  }
+  if (isPerformanceMarketingServiceTitle(serviceTitle)) {
+    return clientHasPerformanceMarketingOffering(client);
+  }
+
+  return true;
 }
 
 /** Number of case studies shown in the featured grid on each service detail page. */

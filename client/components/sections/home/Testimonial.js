@@ -126,7 +126,7 @@ export default function Testimonial() {
             </motion.div>
 
             <div className="mt-4">
-              <div className="overflow-hidden h-[420px] lg:h-[450px]">
+              <div className="overflow-hidden h-[390px] lg:h-[480px]">
                 <div
                   ref={marqueeRef}
                   className="flex h-full items-stretch gap-8 lg:gap-10"
@@ -151,23 +151,23 @@ export default function Testimonial() {
                     <motion.div
                       key={`${item.id}-${idx}`}
                       variants={fadeUp}
-                      className={`min-w-[380px] h-full px-8 py-2 flex flex-col justify-between ${idx % testimonials.length !== 0 ? 'lg:border-l-[1.5px] lg:border-neutral-300 lg:pl-8' : ''}`}
+                      className={`min-w-[min(100vw-2rem,300px)] sm:min-w-[340px] lg:min-w-[380px] h-full px-4 py-3 sm:px-6 lg:px-8 lg:py-2 flex flex-col justify-between ${idx % testimonials.length !== 0 ? 'lg:border-l-[1.5px] lg:border-neutral-300 lg:pl-8' : ''}`}
                     >
                       <div className="flex justify-between items-start gap-4 shrink-0">
-                        <div className="text-yellow-500 text-2xl" aria-hidden>
+                        <div className="text-yellow-500 text-lg sm:text-2xl" aria-hidden>
                           ★★★★★
                         </div>
-                        <p className="text-base text-neutral-400 shrink-0">
+                        <p className="text-sm sm:text-base text-neutral-400 shrink-0">
                           {item.platform}
                         </p>
                       </div>
 
-                      <p className="mt-6 flex-1 min-h-0 overflow-y-auto overscroll-contain text-xl font-medium lg:text-xl text-neutral-800 leading-relaxed [scrollbar-gutter:stable]">
+                      <p className="mt-4 sm:mt-6 flex-1 min-h-0 overflow-y-auto overscroll-contain text-sm sm:text-base lg:text-lg font-medium text-neutral-800 leading-relaxed [scrollbar-gutter:stable]">
                         &ldquo;{item.text}&rdquo;
                       </p>
 
-                      <div className="mt-10 sm:mt-12 flex items-center gap-3 shrink-0">
-                        <div className="relative w-16 h-16 rounded-full overflow-hidden bg-neutral-200 shrink-0">
+                      <div className="mt-6 sm:mt-10 lg:mt-12 flex items-center gap-3 shrink-0">
+                        <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-neutral-200 shrink-0">
                           <Image
                             src={item.avatar}
                             alt={item.name}
@@ -177,10 +177,10 @@ export default function Testimonial() {
                           />
                         </div>
                         <div className="min-w-0">
-                          <p className="font-semibold text-neutral-900 truncate text-base lg:text-lg">
+                          <p className="font-semibold text-neutral-900 truncate text-sm sm:text-base lg:text-lg">
                             {item.name}
                           </p>
-                          <p className="text-base text-neutral-700 truncate">
+                          <p className="text-sm sm:text-base text-neutral-700 truncate">
                             {item.role}
                           </p>
                         </div>

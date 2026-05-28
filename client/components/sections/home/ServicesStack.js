@@ -20,19 +20,34 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-export default function ServicesStack() {
+const defaultDescription =
+  "Whether you're building a SaaS platform, launching a mobile app, or validating a new MVP; Webfudge is ready to help. Let's turn your product vision into a world-class user experience.";
+
+export default function ServicesStack({
+  heading,
+  description = defaultDescription,
+  titleTag: TitleTag = "h2",
+}) {
+  const titleContent = heading ?? (
+    <>
+      Services to build
+      <br />
+      <span className="font-serif italic font-normal">strong brands</span>
+    </>
+  );
+
+  const title = (
+    <TitleTag className="text-4xl lg:text-6xl font-medium leading-tight">
+      {titleContent}
+    </TitleTag>
+  );
+
   return (
     <Section variant="default" className="mt-[4vh]">
       <Container>
         <SectionHeader
-          title={
-            <h1 className="text-4xl lg:text-6xl font-medium leading-tight">
-              Services we build strong
-              <br />
-              Products
-            </h1>
-          }
-          description="Whether you're building a SaaS platform, launching a mobile app, or validating a new MVP; Webfudge is ready to help. Let's turn your product vision into a world-class user experience."
+          title={title}
+          description={description}
           layout="split"
           className="items-start text-left"
           descriptionClassName="max-w-2xl mx-0"

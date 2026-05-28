@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
@@ -63,51 +64,59 @@ export default function Footer() {
           <div className="mb-14 border-t border-neutral-200 pt-8 md:pt-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
               <div className="lg:col-span-3">
-                <div className="space-y-8">
+                <div className="space-y-6 md:space-y-8">
                   <div>
-                    <p className="text-md text-neutral-500">{FOOTER_CONTACT_INFO.emailLabel}</p>
+                    <p className="text-sm md:text-md text-neutral-500">{FOOTER_CONTACT_INFO.emailLabel}</p>
                     <a
                       href={`mailto:${FOOTER_CONTACT_INFO.email}`}
-                      className="mt-2 inline-block text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors"
+                      className="mt-1.5 md:mt-2 inline-block text-lg sm:text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors break-all sm:break-normal"
                     >
                       {FOOTER_CONTACT_INFO.email}
                     </a>
                   </div>
 
                   <div>
-                    <p className="text-md text-neutral-500">{FOOTER_CONTACT_INFO.phoneLabel}</p>
+                    <p className="text-sm md:text-md text-neutral-500">{FOOTER_CONTACT_INFO.phoneLabel}</p>
                     <a
                       href={FOOTER_CONTACT_INFO.phoneHref}
-                      className="mt-2 inline-flex items-center gap-3 text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors"
+                      className="mt-1.5 md:mt-2 inline-flex items-center gap-2.5 sm:gap-3 text-lg sm:text-xl md:text-2xl font-medium text-neutral-900 hover:text-black transition-colors"
                     >
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#DCF8E8] text-lg">
-                        💬
+                      <span className="inline-flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full bg-[#DCF8E8]">
+                        <Icon
+                          icon="logos:whatsapp-icon"
+                          className="w-5 h-5 sm:w-6 sm:h-6"
+                          aria-hidden
+                        />
                       </span>
-                      <span>{FOOTER_CONTACT_INFO.phone}</span>
+                      <span className="break-all sm:break-normal">{FOOTER_CONTACT_INFO.phone}</span>
                     </a>
                   </div>
                 </div>
               </div>
 
               <div className="lg:col-span-9">
-                <h4 className="text-center lg:text-left text-2xl md:text-[34px] leading-tight font-medium text-neutral-900">
+                <h4 className="text-left text-lg sm:text-xl md:text-[34px] leading-snug md:leading-tight font-medium text-neutral-900 text-balance max-w-prose lg:max-w-none">
                   Limited Liability Company Based In
                 </h4>
 
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 border border-neutral-200">
+                <div className="mt-5 md:mt-8 grid grid-cols-1 md:grid-cols-3 border border-neutral-200 bg-white">
                   {FOOTER_OFFICES.map((office, index) => (
                     <div
                       key={office.country}
-                      className={`p-6 md:p-7 ${index !== FOOTER_OFFICES.length - 1 ? "border-b sm:border-b-0 sm:border-r border-neutral-200" : ""}`}
+                      className={`flex items-center gap-3 sm:gap-4 px-4 py-3.5 sm:px-6 sm:py-5 md:p-7 ${
+                        index !== FOOTER_OFFICES.length - 1
+                          ? "border-b md:border-b-0 md:border-r border-neutral-200"
+                          : ""
+                      }`}
                     >
                       <Image
                         src={office.flag}
                         alt={`${office.country} flag`}
                         width={40}
                         height={28}
-                        className="h-12 w-auto object-contain"
+                        className="h-8 w-auto shrink-0 object-contain sm:h-10 md:h-12"
                       />
-                      <p className="mt-4 text-lg font-semibold tracking-wide text-neutral-900">
+                      <p className="text-base sm:text-lg font-semibold tracking-wide text-neutral-900">
                         {office.country}
                       </p>
                     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Section from "@/components/layout/Section";
@@ -9,13 +8,6 @@ import Container from "@/components/layout/Container";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import { validateContactForm } from "@/lib/helpers";
-
-const EMAILJS_SERVICE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_pfw4cle";
-const EMAILJS_TEMPLATE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_2r0898d";
-const EMAILJS_PUBLIC_KEY =
-  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "jgD1dSgL1VKS1UTD5";
 
 const initialForm = {
   name: "",
@@ -53,42 +45,25 @@ export default function ContactForm() {
     setSubmitError("");
 
     try {
-      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-        throw new Error("EmailJS config missing. Please set EmailJS keys.");
-      }
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          // send multiple common aliases to match legacy EmailJS templates
-          name: form.name,
-          from_name: form.name,
-          user_name: form.name,
-          company_name: form.company_name,
-          company: form.company_name,
-          user_email: form.user_email,
-          from_email: form.user_email,
-          reply_to: form.user_email,
-          mobile_number: form.mobile_number,
-          phone: form.mobile_number,
-          contact_number: form.mobile_number,
-          message: form.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        throw new Error(data.error || "Unable to send message right now.");
+      }
 
       setStatus("success");
       setForm(initialForm);
     } catch (error) {
-      const details = [
-        error?.message,
-        error?.text,
-        error?.status ? `status ${error.status}` : "",
-      ]
-        .filter(Boolean)
-        .join(" - ");
-      setSubmitError(details || "Unable to send message right now.");
+      setSubmitError(error?.message || "Unable to send message right now.");
       setStatus("error");
     }
   };

@@ -1,51 +1,60 @@
 import { NextResponse } from "next/server";
+import { validateContactForm } from "@/lib/helpers";
+import { sendContactEmail } from "@/lib/contact/sendContactEmail";
 
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function validate(body) {
-  const errors = {};
-  if (!body.name || String(body.name).trim().length < 2) {
-    errors.name = "Please enter your full name.";
-  }
-  if (!body.email || !isValidEmail(body.email)) {
-    errors.email = "Please enter a valid email address.";
-  }
-  if (!body.message || String(body.message).trim().length < 10) {
-    errors.message = "Message must be at least 10 characters.";
-  }
-  return { valid: Object.keys(errors).length === 0, errors };
-}
+export const runtime = "nodejs";
 
 export async function POST(request) {
   try {
+    if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Contact form is not configured. Please try again later or email us directly.",
+        },
+        { status: 503 }
+      );
+    }
+
     const body = await request.json();
-    const { valid, errors } = validate(body);
+    const fields = {
+      name: body.name ?? "",
+      company_name: body.company_name ?? body.company ?? "",
+      user_email: body.user_email ?? body.email ?? "",
+      mobile_number: body.mobile_number ?? body.phone ?? "",
+      message: body.message ?? "",
+    };
+
+    const { valid, errors } = validateContactForm(fields);
 
     if (!valid) {
       return NextResponse.json({ success: false, errors }, { status: 400 });
     }
 
     const payload = {
-      name: String(body.name).trim(),
-      email: String(body.email).trim(),
-      company: body.company ? String(body.company).trim() : "",
-      message: String(body.message).trim(),
+      name: String(fields.name).trim(),
+      email: String(fields.user_email).trim(),
+      company: String(fields.company_name).trim(),
+      mobile: String(fields.mobile_number).trim(),
+      message: String(fields.message).trim() || "(No message provided)",
     };
 
-    // Placeholder: this API can be wired to a server-side email provider if needed.
-    // Contact form currently sends mail directly via EmailJS from the client.
-    if (process.env.CONTACT_EMAIL) {
-      console.log("[Contact form submission]", payload);
-    }
+    await sendContactEmail(payload);
 
     return NextResponse.json({ success: true });
   } catch (e) {
     console.error("[Contact API error]", e);
+    const message = e?.message || "";
+    const isResendDomain =
+      /domain is not verified|verify your domain|invalid from/i.test(message);
     return NextResponse.json(
-      { success: false, error: "Something went wrong. Please try again." },
-      { status: 500 }
+      {
+        success: false,
+        error: isResendDomain
+          ? message
+          : "Something went wrong. Please try again.",
+      },
+      { status: isResendDomain ? 503 : 500 }
     );
   }
 }

@@ -235,36 +235,6 @@ export const clients = [
         solution_offered: "Our team handled end-to-end web design and development — starting with brand-aligned UI/UX mockups, mobile-first responsive layouts, and integrating a scalable CMS for easy content updates. We optimized loading speed, improved navigation flows, and ensured SEO best practices were baked in. From product listings to contact forms, every interaction was designed to delight and convert."
     },
     {
-        id: 13,
-        title: "Greenways EVI Creatives",
-        fav: true,
-        img_url: "/images/clients/evi/evi2.jpg",
-        project_imgs: [
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037897/Greenways/Instagram_post_-_51_qnjxqm.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037915/Greenways/poster_3_teal_kmhilf.jpg   ",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037908/Greenways/poster_4_black_nhrrkw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_3_white_emc4he.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037913/Greenways/poster_6_shspdm.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/Frame_3_kberuw.jpg",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037895/Greenways/A5_-_53_zwrjaj.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037896/Greenways/Instagram_post_-_7_a9cjby.png",
-            "https://res.cloudinary.com/doguvqxgl/image/upload/v1765037901/Greenways/poster_1_2_y1js8o.jpg"
-        ],
-        short_des: "Creative design for Greenways EVI, driving measurable brand growth.",
-        services_offered: [
-            "Graphic Design",
-            "Creative Design",
-            "Brand Collateral"
-        ],
-        key_highlights: [
-            "Delivered 15+ unique creative assets for print and digital",
-            "Helped improve brand social engagement by 40%",
-            "Designed 5 new marketing collateral pieces resulting in a 25% increase in campaign reach"
-        ],
-        introduction: "Creative design project for Greenways EVI focused on boosting visual impact and measurable campaign performance.",
-        solution_offered: "Produced over 15 brand-aligned creative designs and marketing collateral, directly contributing to a 40% increase in social engagement and a 25% uplift in campaign effectiveness for Greenways EVI."
-    },
-    {
         id: 5,
         title: "Mukund Maid Jewellers Website",
         fav: true,

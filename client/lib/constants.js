@@ -71,7 +71,7 @@ export const SERVICES_MENU = [
       "Website Development",
       "Landing Pages",
       "CMS Development",
-      "Conversion Optimization",
+      "Landing Page Optimization",
       "Accessibility",
     ],
   },

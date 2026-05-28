@@ -215,7 +215,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </nav>
-                <div className="pt-6">
+                <div className="pt-6 space-y-3">
                   <Button
                     href="/contact"
                     variant="primary"
@@ -224,6 +224,16 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                   >
                     Book a Call
+                  </Button>
+                  <Button
+                    href="https://www.webfudgesystems.in/"
+                    external
+                    variant="light"
+                    size="md"
+                    className="w-[60%] -ml-1"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Webfudge Systems
                   </Button>
                 </div>
               </div>

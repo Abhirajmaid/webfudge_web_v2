@@ -58,8 +58,20 @@ export function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+/** Optional +, country code (1–3 digits), then subscriber number (E.164, max 15 digits). */
+const PHONE_DIGITS_PATTERN = /^(?:\d{10}|[1-9]\d{10,14})$/;
+
 /**
- * Validate contact form fields (EmailJS — same rules as legacy site).
+ * @param {string} value
+ * @returns {boolean}
+ */
+export function isValidPhoneNumber(value) {
+  const digits = String(value || "").replace(/\D/g, "");
+  return PHONE_DIGITS_PATTERN.test(digits);
+}
+
+/**
+ * Validate contact form fields.
  * @param {{ name: string, company_name: string, user_email: string, mobile_number: string, message?: string }} fields
  * @returns {{ valid: boolean, errors: Record<string, string> }}
  */
@@ -78,11 +90,11 @@ export function validateContactForm(fields) {
     errors.user_email = "Please enter a valid email address.";
   }
 
-  const phoneDigits = String(fields.mobile_number || "").replace(/\D/g, "");
-  if (!phoneDigits) {
+  const mobile = String(fields.mobile_number || "").trim();
+  if (!mobile) {
     errors.mobile_number = "Please enter your contact number.";
-  } else if (phoneDigits.length !== 10) {
-    errors.mobile_number = "Please enter a valid 10-digit mobile number.";
+  } else if (!isValidPhoneNumber(mobile)) {
+    errors.mobile_number = "Please enter a valid phone number.";
   }
 
   return {
