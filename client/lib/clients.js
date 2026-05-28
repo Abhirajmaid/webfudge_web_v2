@@ -52,6 +52,7 @@ export const clients = [
         id: 22,
         title: "EVI Performance Marketing",
         fav: true,
+        link: "https://www.behance.net/gallery/250143065/EVI-Performance-Marketing",
         img_url: "/images/clients/evi/evi2.jpg",
         project_imgs: [],
         short_des: "Performance marketing for EVI (Greenways Mobility) — paid campaigns, testing, and measurable growth.",
@@ -101,7 +102,29 @@ export const clients = [
         solution_offered:
             "We designed and developed a full-stack website tailored to Xtrawrkx. The UI/UX focuses on clarity and speed, allowing users to browse, filter, and explore events and consultancy services, resources easily.  We built the backend on Firebase, enabling dynamic content management, and deployed the entire solution on AWS for scalability and performance. We also integrated event registration and payment integration for the events."
     },
-
+    {
+        id: 23,
+        title: "Shambhala Performance Marketing",
+        fav: true,
+        link: "https://www.behance.net/gallery/250085895/Shambhala-Performance-Marketing?share=1",
+        img_url: "/images/clients/shambhala/1.png",
+        project_imgs: [],
+        short_des: "Performance marketing for Shambhala - paid campaigns, structured testing, and measurable growth.",
+        services_offered: [
+            "Performance Marketing",
+            "Paid Social",
+            "Campaign Strategy",
+            "Conversion Optimization",
+            "Analytics & Reporting",
+        ],
+        key_highlights: [
+            "Built campaign structure aligned with Shambhala's growth objectives",
+            "Ran continuous creative and audience testing to improve efficiency",
+            "Delivered clear performance reporting for ongoing optimization",
+        ],
+        introduction: "Shambhala needed a performance marketing setup that could grow high-intent leads while keeping messaging and creative consistent across channels.",
+        solution_offered: "We executed a performance-focused campaign framework with testing, audience segmentation, and ongoing optimization across paid channels, helping improve lead quality and visibility into what drives results.",
+    },
     {
         id: 19,
         title: "Yashraj Group Website",

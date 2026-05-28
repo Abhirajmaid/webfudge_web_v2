@@ -34,13 +34,9 @@ export async function POST(request) {
       message: String(body.message).trim(),
     };
 
-    // Optional: send email via Resend, SendGrid, etc. when env is set.
-    // Example with Resend: await sendEmail({ to: process.env.CONTACT_EMAIL, ...payload });
+    // Placeholder: this API can be wired to a server-side email provider if needed.
+    // Contact form currently sends mail directly via EmailJS from the client.
     if (process.env.CONTACT_EMAIL) {
-      // Placeholder: in production you would call your email API here.
-      // e.g. await resend.emails.send({ from: '...', to: process.env.CONTACT_EMAIL, subject: `Contact from ${payload.name}`, html: `...` });
-      console.log("[Contact form submission]", payload);
-    } else {
       console.log("[Contact form submission]", payload);
     }
 

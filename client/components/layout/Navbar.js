@@ -313,7 +313,12 @@ export default function Navbar() {
                           Expertly crafted digital products for ambitious businesses; SaaS, web, and mobile engineered by Webfudge Systems.
                         </p>
                         <div className="pt-6">
-                          <Button href="/contact" variant="primary" size="md">
+                          <Button
+                            href="https://www.webfudgesystems.in/"
+                            external
+                            variant="primary"
+                            size="md"
+                          >
                             Get a Quote
                           </Button>
                         </div>

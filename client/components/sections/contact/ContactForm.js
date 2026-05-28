@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
@@ -10,10 +10,12 @@ import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import { validateContactForm } from "@/lib/helpers";
 
-/** Same EmailJS config as legacy webfudge_site contact form */
-const EMAILJS_SERVICE_ID = "service_pfw4cle";
-const EMAILJS_TEMPLATE_ID = "template_2r0898d";
-const EMAILJS_PUBLIC_KEY = "jgD1dSgL1VKS1UTD5";
+const EMAILJS_SERVICE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_pfw4cle";
+const EMAILJS_TEMPLATE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_2r0898d";
+const EMAILJS_PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "jgD1dSgL1VKS1UTD5";
 
 const initialForm = {
   name: "",
@@ -24,10 +26,10 @@ const initialForm = {
 };
 
 export default function ContactForm() {
-  const formRef = useRef(null);
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,17 +50,45 @@ export default function ContactForm() {
 
     setStatus("submitting");
     setErrors({});
+    setSubmitError("");
 
     try {
-      await emailjs.sendForm(
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        throw new Error("EmailJS config missing. Please set EmailJS keys.");
+      }
+
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        {
+          // send multiple common aliases to match legacy EmailJS templates
+          name: form.name,
+          from_name: form.name,
+          user_name: form.name,
+          company_name: form.company_name,
+          company: form.company_name,
+          user_email: form.user_email,
+          from_email: form.user_email,
+          reply_to: form.user_email,
+          mobile_number: form.mobile_number,
+          phone: form.mobile_number,
+          contact_number: form.mobile_number,
+          message: form.message,
+        },
         EMAILJS_PUBLIC_KEY
       );
+
       setStatus("success");
       setForm(initialForm);
-    } catch {
+    } catch (error) {
+      const details = [
+        error?.message,
+        error?.text,
+        error?.status ? `status ${error.status}` : "",
+      ]
+        .filter(Boolean)
+        .join(" - ");
+      setSubmitError(details || "Unable to send message right now.");
       setStatus("error");
     }
   };
@@ -140,7 +170,6 @@ export default function ContactForm() {
               </div>
             ) : (
               <form
-                ref={formRef}
                 onSubmit={handleSubmit}
                 noValidate
                 className="rounded-3xl border border-neutral-100 bg-white p-8 sm:p-10 flex flex-col gap-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
@@ -206,7 +235,7 @@ export default function ContactForm() {
 
                 {status === "error" && (
                   <p className="text-sm text-red-500 bg-red-50 rounded-xl px-4 py-3">
-                    Something went wrong. Please try again or email us directly.
+                    {submitError || "Something went wrong. Please try again or email us directly."}
                   </p>
                 )}
 
