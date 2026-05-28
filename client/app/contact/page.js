@@ -1,12 +1,15 @@
 import PageHeaderDark from "@/components/layout/PageHeaderDark";
 import ContactForm from "@/components/sections/contact/ContactForm";
 import ContactMapSection from "@/components/sections/contact/MapSection";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact",
+export const metadata = buildPageMetadata({
+  title: "Contact Webfudge | Start Your Project",
   description:
-    "Start your project with WebFudge. Get in touch for a free discovery call and let's build something great together.",
-};
+    "Contact Webfudge for web design, development, branding, and growth support. Share your goals and get a quick response.",
+  path: "/contact",
+  keywords: ["contact webfudge", "hire web design agency", "project inquiry"],
+});
 
 export default function ContactPage() {
   return (

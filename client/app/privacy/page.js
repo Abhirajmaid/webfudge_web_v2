@@ -1,11 +1,14 @@
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import { SITE_NAME } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Privacy Policy",
-  description: `Privacy Policy for ${SITE_NAME} — how we collect, use, and protect your personal information.`,
-};
+export const metadata = buildPageMetadata({
+  title: "Privacy Policy | Webfudge",
+  description: `Read the ${SITE_NAME} privacy policy to understand how we collect, use, and protect your information.`,
+  path: "/privacy",
+  keywords: ["privacy policy", "data protection", "webfudge legal"],
+});
 
 const lastUpdated = "March 1, 2025";
 

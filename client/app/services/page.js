@@ -1,11 +1,14 @@
 import ServicesStack from "@/components/sections/services/ServicesStack";
 import CTA from "@/components/sections/services/CTA";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Services",
+export const metadata = buildPageMetadata({
+  title: "Digital Services | Web Design, Development, Branding & SEO",
   description:
-    "Full-stack digital services — web design, development, SEO, e-commerce, CMS, and consulting. Everything your brand needs to grow online.",
-};
+    "Explore Webfudge services: branding, web design, website development, e-commerce, and performance-focused growth support.",
+  path: "/services",
+  keywords: ["web development services", "branding services", "seo services", "ecommerce development"],
+});
 
 export default function ServicesPage() {
   return (

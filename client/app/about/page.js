@@ -7,12 +7,15 @@ import AboutTeam from "@/components/sections/about/Team";
 import AboutClients from "@/components/sections/about/Clients";
 import AboutCTA from "@/components/sections/about/CTA";
 import Testimonial from "@/components/sections/home/Testimonial";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "About Us",
+export const metadata = buildPageMetadata({
+  title: "About Webfudge | Team, Process & Mission",
   description:
-    "Learn about WebFudge — our mission, values, team, and the craft behind every premium digital experience we build.",
-};
+    "Meet the Webfudge team and discover our process, values, and approach to building premium digital experiences.",
+  path: "/about",
+  keywords: ["about webfudge", "webfudge team", "design agency mission"],
+});
 
 export default function AboutPage() {
   return (

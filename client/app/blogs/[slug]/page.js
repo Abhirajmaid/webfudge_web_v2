@@ -5,14 +5,19 @@ import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Button from "@/components/ui/Button";
 import { POSTS } from "@/lib/blogPosts";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }) {
   const post = POSTS.find((p) => p.slug === params.slug);
-  if (!post) return { title: "Post not found" };
-  return {
-    title: post.title,
+  if (!post) return buildPageMetadata({ title: "Post not found", noIndex: true });
+  return buildPageMetadata({
+    title: `${post.title} | Webfudge Blog`,
     description: post.excerpt,
-  };
+    path: `/blogs/${params.slug}`,
+    type: "article",
+    image: post.image,
+    keywords: [post.category, "webfudge blog", "digital strategy"],
+  });
 }
 
 export default function BlogPostPage({ params }) {

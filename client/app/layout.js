@@ -8,6 +8,9 @@ import {
   SITE_TAGLINE,
   SITE_URL,
 } from "@/lib/constants";
+import { buildSiteSchemas } from "@/lib/seo";
+
+const siteSchemas = buildSiteSchemas();
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -40,7 +43,7 @@ export const metadata = {
     description: SITE_TAGLINE,
     images: [
       {
-        url: "/logo_packages/og-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: SITE_NAME,
@@ -51,6 +54,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Build Brand Fast!`,
     description: SITE_TAGLINE,
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
@@ -62,15 +66,15 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo_packages/favicon.ico", sizes: "any" },
-      { url: "/logo_packages/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/logo_packages/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon%20_webfudge/favicon.ico", sizes: "any" },
+      { url: "/favicon%20_webfudge/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     apple: [
-      { url: "/logo_packages/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon%20_webfudge/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
+    shortcut: ["/favicon%20_webfudge/favicon.ico"],
   },
-  manifest: "/logo_packages/site.webmanifest",
+  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: SITE_URL,
   },
@@ -86,6 +90,13 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="msapplication-config" content="/logo_packages/browserconfig.xml" />
         <link rel="mask-icon" href="/logo_packages/safari-pinned-tab.svg" color="#000000" />
+        {siteSchemas.map((schema, index) => (
+          <script
+            key={`jsonld-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
       </head>
       <body className="antialiased">
         <LordIconInit />

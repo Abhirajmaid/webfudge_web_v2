@@ -1,11 +1,14 @@
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import { SITE_NAME } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Terms and Conditions",
-  description: `Terms and Conditions for using ${SITE_NAME} website and services.`,
-};
+export const metadata = buildPageMetadata({
+  title: "Terms and Conditions | Webfudge",
+  description: `Review terms and conditions for using ${SITE_NAME} website and services.`,
+  path: "/terms",
+  keywords: ["terms and conditions", "webfudge legal terms"],
+});
 
 const lastUpdated = "March 1, 2025";
 

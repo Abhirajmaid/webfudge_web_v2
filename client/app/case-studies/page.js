@@ -3,12 +3,15 @@ import CaseStudiesHero from "@/components/sections/case-studies/Hero";
 import CaseStudiesGridSection from "@/components/sections/case-studies/CaseStudiesGrid";
 import Testimonial from "@/components/sections/case-studies/Testimonial";
 import CTA from "@/components/sections/case-studies/CTA";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Case Studies",
+export const metadata = buildPageMetadata({
+  title: "Case Studies | Webfudge Client Results",
   description:
-    "See how WebFudge has helped 50+ brands achieve measurable results through premium web design and development.",
-};
+    "See Webfudge case studies and outcomes from branding, website, and growth projects delivered for startups and businesses.",
+  path: "/case-studies",
+  keywords: ["web design case studies", "agency portfolio", "client success stories"],
+});
 
 function CaseStudiesGridFallback() {
   return (

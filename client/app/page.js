@@ -6,12 +6,21 @@ import Testimonial from "@/components/sections/home/Testimonial";
 import Pricing from "@/components/sections/home/Pricing";
 import FAQ from "@/components/sections/home/FAQ";
 import CTA from "@/components/sections/home/CTA";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Webfudge",
+export const metadata = buildPageMetadata({
+  title: "Webfudge | Creative Web Design & Development Agency",
   description:
-    "We build digital experiences that convert. Premium web design, development, and growth strategy for ambitious brands.",
-};
+    "Webfudge builds conversion-focused websites, landing pages, and brand systems for ambitious startups and growing companies.",
+  path: "/",
+  keywords: [
+    "web design agency",
+    "website development company",
+    "branding agency",
+    "next.js development",
+    "seo and growth",
+  ],
+});
 
 export default function HomePage() {
   return (

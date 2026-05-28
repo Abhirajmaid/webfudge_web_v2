@@ -1,12 +1,15 @@
 import Pricing from "@/components/sections/pricing/Pricing";
 import FAQ from "@/components/sections/pricing/FAQ";
 import CTA from "@/components/sections/pricing/CTA";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Pricing",
+export const metadata = buildPageMetadata({
+  title: "Webfudge Pricing | Website & Branding Packages",
   description:
-    "Simple, transparent pricing for web design and development projects. No hidden fees. View our Starter, Growth, and Enterprise plans.",
-};
+    "Explore Webfudge pricing packages for website design, development, and brand growth with transparent deliverables.",
+  path: "/pricing",
+  keywords: ["website pricing", "web design cost", "agency pricing plans"],
+});
 
 export default function PricingPage() {
   return (
